@@ -14,7 +14,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 import nltk
 from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 
+ps = PorterStemmer()
 sns.set() # use seaborn plotting style
 
 s_path = 'articles/'
@@ -54,32 +57,64 @@ rows = [['A Scalable MMR Approach to Sentence Scoring for Multi-Document Update 
         ['On the Development of the RST Spanish Treebank', 'titre'],
         ['Extraction of terminology in the field of construction', 'titre'],
         ['An NLP Tool Suite for Processing Word Lattices','titre'],
-        ["The increasing availability of online information has necessitated intensive", 'abstract'],
-        ['Aresearch in the area of automatic text summarization within the Natural Lan-', 'abstract']]
 
+        ['Juan-Manuel Torres-Moreno', 'author'],
+        ['Florian Boudin ♮ and Marc El-B`eze', 'author'],
+        ['Juan-Manuel Torres-Moreno', 'author'],
+        ['Juan-Manuel Torres-Moreno', 'author'],
+        ['Introduction', 'introduction'],
+        ['Extensive experiments on query-oriented multi-', 'introduction'],
+        ['document summarization have been carried out', 'introduction'],
+        ['over the past few years.', 'introduction'],
+        ['Most of the strategies', 'introduction'],
+        ['to produce summaries are based on an extrac-', 'introduction'],
+        ['tion method, which identifies salient textual seg-', 'introduction'],
+        ['ments, most often sentences, in documents. Sen-', 'introduction'],
+        ['tences containing the most salient concepts are se-', 'introduction'],
+        ['lected, ordered and assembled according to their', 'introduction'],
+        ['relevance to produce summaries (also called ex-', 'introduction'],
+        ['tracts) (Mani and Maybury, 1999).', 'introduction'],
+        ['Recently emerged from the Document Under-', 'introduction'],
+        ['standing Conference (DUC) 20071, update sum-', 'introduction'],
+        ['marization attempts to enhance summarization', 'introduction'],
+        ['when more information about knowledge acquired', 'introduction'],
+        ['by the user is available. It asks the following ques-', 'introduction'],
+        ['tion: has the user already read documents on the', 'introduction'],
+        ['topic? In the case of a positive answer, producing', 'introduction'],
+        ['an extract focusing on only new facts is of inter-', 'introduction'],
+        ['est. In this way, an important issue is introduced:', 'introduction']]
+
+for row in rows:
+    word_list = word_tokenize(row[0])
+    word_list = [word for word in word_list if not word in stopwords.words()]
+    for word in word_list:
+        word = ps.stem(word)
+    row[0] = ' '.join(word_list)
+
+print(rows)
 training_data = pd.DataFrame(rows, columns=columns)
 
-stmt_docs = [row['sent'] for index,row in training_data.iterrows() if row['class'] == 'abstract']
 
-vec_s = CountVectorizer()
-X_s = vec_s.fit_transform(stmt_docs)
-tdm_s = pd.DataFrame(X_s.toarray(), columns=vec_s.get_feature_names())
+def vectorizer( feature ):
 
+    stmt_docs = [row['sent'] for index,row in training_data.iterrows() if row['class'] == feature ]
+    vec_s = CountVectorizer()
+    X_s = vec_s.fit_transform(stmt_docs)
+    tdm_s = pd.DataFrame(X_s.toarray(), columns=vec_s.get_feature_names())
+    return vec_s,X_s;
 
-q_docs = [row['sent'] for index,row in training_data.iterrows() if row['class'] == 'titre']
+vec_q, X_q = vectorizer('titre')
+vec_i, X_i = vectorizer('introduction')
+vec_a, X_a = vectorizer('author')
+def toDico ( vec, X ):
 
-vec_q = CountVectorizer()
-X_q = vec_q.fit_transform(q_docs)
-tdm_q = pd.DataFrame(X_q.toarray(), columns=vec_q.get_feature_names())
+    word_list = vec.get_feature_names()
+    count_list = X.toarray().sum(axis=0)
+    return  count_list, dict(zip(word_list,count_list))
 
-
-word_list_s = vec_s.get_feature_names();
-count_list_s = X_s.toarray().sum(axis=0)
-freq_s = dict(zip(word_list_s,count_list_s))
-
-word_list_q = vec_q.get_feature_names();
-count_list_q = X_q.toarray().sum(axis=0)
-freq_q = dict(zip(word_list_q,count_list_q))
+count_list_q, freq_q = toDico(vec_q, X_q)
+count_list_i, freq_i = toDico(vec_i, X_i)
+count_list_a, freq_a = toDico(vec_a, X_a)
 
 docs = [row['sent'] for index,row in training_data.iterrows()]
 
@@ -88,41 +123,38 @@ X = vec.fit_transform(docs)
 
 total_features = len(vec.get_feature_names())
 
-total_cnts_features_s = count_list_s.sum(axis=0)
 total_cnts_features_q = count_list_q.sum(axis=0)
+total_cnts_features_i = count_list_i.sum(axis=0)
+total_cnts_features_a = count_list_a.sum(axis=0)
 
 new_sentence = input(str("yo met une phrase : "))
 new_word_list = word_tokenize(new_sentence)
-
-
-prob_s_with_ls = []
+new_word_list = [word for word in new_word_list if not word in stopwords.words()]
 for word in new_word_list:
-    if word in freq_s.keys():
-        count = freq_s[word]
-    else:
-        count = 0
-    prob_s_with_ls.append((count + 1)/(total_cnts_features_s + total_features))
-bobo = dict(zip(new_word_list,prob_s_with_ls))
-bobo_res = 1
-for word in new_word_list:
-    bobo_res = bobo_res*bobo[word]
-
-prob_q_with_ls = []
-for word in new_word_list:
-    if word in freq_q.keys():
-        count = freq_q[word]
-    else:
-        count = 0
-    prob_q_with_ls.append((count + 1)/(total_cnts_features_q + total_features))
-baba = dict(zip(new_word_list,prob_q_with_ls))
-baba_res = 1
-for word in new_word_list:
-    baba_res = baba_res*baba[word]
+    word = ps.stem(word)
 
 
+def probabilist(total_cnts_features,freq):
+
+    prob_s_with_ls = []
+    for word in new_word_list:
+        if word in freq.keys():
+            count = freq[word]
+        else:
+            count = 0
+        prob_s_with_ls.append((count + 1)/(total_cnts_features + total_features))
+    bobo = dict(zip(new_word_list,prob_s_with_ls))
+    bobo_res = 1
+    for word in new_word_list:
+        bobo_res = bobo_res*bobo[word]
+    return bobo_res* ( total_cnts_features/total_features)
 
 
-if baba_res*(6/8) > bobo_res*(2/8):
-    print( "c'est un titre!")
-else:
-    print( "c'est un abstract ")
+probas = dict();
+probas["author"] = probabilist(total_cnts_features_a, freq_a)
+probas["intro"] = probabilist(total_cnts_features_i, freq_i)
+probas["titre"] = probabilist(total_cnts_features_q, freq_q)
+
+print(probas)
+
+print(max(probas, key=probas.get))
