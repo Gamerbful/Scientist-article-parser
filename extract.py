@@ -13,10 +13,10 @@ def get_info(path):
 
     print(path)
     title = info.title
-    print("Voici le titre :"+title)
+    try:
+        print("Voici le titre :"+str(title))
     author = info.author
-    print("Voici l'auteur :"+author)
-
+        print("Voici le auteur :"+str(author))
 
 
 if __name__ == '__main__':
