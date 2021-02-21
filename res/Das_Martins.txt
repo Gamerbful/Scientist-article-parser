@@ -2,7 +2,12 @@ Nom du fichier: Das_Martins.pdf
 
 Titre: A Survey on Automatic Text Summarization 
 
+<<<<<<< HEAD
 Auteurs: Dipanjan Das & Martins
 
 Abstract : The increasing availability of online information has necessitated intensiveresearch in the area of automatic text summarization within the Natural Lan-guage Processing (NLP) community. Over the past half a century, the prob-lem has been addressed from many different perspectives, in varying domainsand using various paradigms. This survey intends to investigate some of themost relevant approaches both in the areas of single-document and multiple-document summarization, giving special emphasis to empirical methods andextractive techniques. Some promising approaches that concentrate on specificdetails of the summarization problem are also discussed. Special attention isdevoted to automatic evaluation of summarization systems, as future researchon summarization is strongly dependent on progress in this area.1
 
+=======
+Auteurs: Dipanjan Das & André F.T & Martins
+
+>>>>>>> 8d55be4bddfa8643cc0723730cbce557ab463294

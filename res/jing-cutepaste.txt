@@ -4,5 +4,8 @@ Titre: Cut and Paste Based Text Summarization  Hongyan  Jing and Kathleen  R. Mc
 
 Auteurs: Hongyan Jing & Kathleen R. McKeown
 
+<<<<<<< HEAD
 Abstract :  We present a cut and paste based text summa- rizer, which uses operations derived from an anal- ysis of human written abstracts. The summarizer edits extracted sentences, using reduction to remove inessential phrases and combination to merge re- suiting phrases together as coherent sentences. Our work includes a statistically based sentence decom- position program that identifies where the phrases of a summary originate in the original document, pro- ducing an aligned corpus of summaries and articles which we used to develop the summarizer. 1 
 
+=======
+>>>>>>> 8d55be4bddfa8643cc0723730cbce557ab463294

@@ -2,7 +2,12 @@ Nom du fichier: Torres-moreno1998.pdf
 
 Titre: LETTER 
 
+<<<<<<< HEAD
 Auteurs: Scott Fahlman & J. Manuel Torres Moreno & Mirta B. Gordon & Mati
 
 Aucun abstract n'a été trouvé
 
+=======
+Auteurs: Scott Fahlman & J. Manuel Torres Moreno & Mirta B. Gordon
+
+>>>>>>> 8d55be4bddfa8643cc0723730cbce557ab463294
