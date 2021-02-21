@@ -2,19 +2,19 @@
 
 
 
-## Nos réunions toutes kawai
+## Nos réunions
 
-Notre première semaine ♡
+Notre première semaine 
 
 
 ![Screenshot](agenda/agenda1.png)
 
-Notre Seconde semaine ♡♡♡
+Notre Seconde semaine
 
 ![Screenshot](agenda/agenda2.png)
 
 
-Notre troisième semaine ♡♡♡♡♡♡
+Notre troisième semaine
 
 ![Screenshot](agenda/agenda3.png)
 
