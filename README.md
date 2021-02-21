@@ -15,12 +15,12 @@ Notre première semaine ♡
 
 Notre Seconde semaine ♡♡♡
 
-<img src="https://drive.google.com/uc?export=view&id=1NDPN0pDsFKSqoJFFE3pqL2BWDOEu3NFM" width="800" />
+![Screenshot](agenda/agenda2.png)
 
 
 Notre troisième semaine ♡♡♡♡♡♡
 
-<img src="https://drive.google.com/uc?export=view&id=1L2Ae-73f1O58l5s61zyTHK-CmS5oHTxJ" width="800" />
+![Screenshot](agenda/agenda3.png)
 
 
 ## Principe
