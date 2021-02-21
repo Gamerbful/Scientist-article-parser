@@ -928,17 +928,17 @@ Evaluation (SemEval 2012), 2012.
 sentiment analysis. In Proceedings of ACL, 2011.
 [13] T. Mikolov. Language Modeling for Speech Recognition in Czech, Masters thesis, Brno Uni-
 versity of Technology, 2007.
-[14] T. Mikolov, J. Kopeck´y, L. Burget, O. Glembek and J. ˇCernock´y. Neural network based lan-
+[14] T. Mikolov, J. Kopecky, L. Burget, O. Glembek and J. ˇCernocky. Neural network based lan-
 guage models for higly inflective languages, In: Proc. ICASSP 2009.
-[15] T. Mikolov, M. Karafi´at, L. Burget, J. ˇCernock´y, S. Khudanpur. Recurrent neural network
+[15] T. Mikolov, M. Karafiat, L. Burget, J. ˇCernocky, S. Khudanpur. Recurrent neural network
 based language model, In: Proceedings of Interspeech, 2010.
-[16] T. Mikolov, S. Kombrink, L. Burget, J. ˇCernock´y, S. Khudanpur. Extensions of recurrent neural
+[16] T. Mikolov, S. Kombrink, L. Burget, J. ˇCernocky, S. Khudanpur. Extensions of recurrent neural
 network language model, In: Proceedings of ICASSP 2011.
-[17] T. Mikolov, A. Deoras, S. Kombrink, L. Burget, J. ˇCernock´y. Empirical Evaluation and Com-
+[17] T. Mikolov, A. Deoras, S. Kombrink, L. Burget, J. ˇCernocky. Empirical Evaluation and Com-
 bination of Advanced Language Modeling Techniques, In: Proceedings of Interspeech, 2011.
 4The code is available at https://code.google.com/p/word2vec/
 11
-[18] T. Mikolov, A. Deoras, D. Povey, L. Burget, J. ˇCernock´y. Strategies for Training Large Scale
+[18] T. Mikolov, A. Deoras, D. Povey, L. Burget, J. ˇCernocky. Strategies for Training Large Scale
 Neural Network Language Models, In: Proc. Automatic Speech Recognition and Understand-
 ing, 2011.
 [19] T. Mikolov. Statistical Language Models based on Neural Networks. PhD thesis, Brno Univer-

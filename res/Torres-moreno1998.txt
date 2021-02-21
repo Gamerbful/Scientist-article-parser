@@ -6,7 +6,7 @@ Efficient Adaptive Learning for Classification Tasks with
 Binary Units
 J. Manuel Torres Moreno
 Mirta B. Gordon
-Département de Recherche Fondamentale sur la Matière Condensée, CEA Grenoble,
+Departement de Recherche Fondamentale sur la Matiere Condensee, CEA Grenoble,
 38054 Grenoble Cedex 9, France
 This article presents a new incremental learning algorithm for classi-
 fication tasks, called NetLines, which is well adapted for both binary
@@ -473,7 +473,7 @@ units. To our knowledge, all of them are incremental. In this section, we
 give a short overview of some of them, in order to put forward the main
 differences with NetLines. We discuss the growth heuristics and then the
 individual unit training algorithms.
-The Tiling algorithm (Mézard & Nadal, 1989) introduces hidden layers,
+The Tiling algorithm (Mezard & Nadal, 1989) introduces hidden layers,
 one after the other. The first neuron of each layer is trained to learn an IR that
 helps to decrease the number of training errors; supplementary hidden units
 are then appended to the layer until the IRs of all the patterns in the train-
@@ -486,7 +486,7 @@ network has a treelike architecture. There are two different algorithms im-
 plementing the Tilinglike Learning in the Parity Machine (Biehl & Opper,
 1016
 J. Manuel Torres Moreno and Mirta B. Gordon
-1991), Offset (Martinez & Estève, 1992), and MonoPlane (Torres Moreno &
+1991), Offset (Martinez & Esteve, 1992), and MonoPlane (Torres Moreno &
 Gordon, 1995). In both, each appended unit is trained to correct the errors
 of the previously included unit in the same hidden layer, a procedure that
 has been shown to generate a parity machine: the class of the input patterns
@@ -499,7 +499,7 @@ case of real-valued input patterns, a solution to the parity machine with a
 bounded number of hidden units also exists (Gordon, 1996).
 The rationale behind the construction of the parity machine is that it
 is not worth training the output unit before all the training errors of the
-hidden units have been corrected. However, Marchand, Golea, and Ruj´an
+hidden units have been corrected. However, Marchand, Golea, and Rujan
 (1990) pointed out that it is not necessary to correct all the errors of the
 successively trained hidden units. It is sufficient that the IRs be faithful and
 LS. If the output unit is trained immediately after each appended hidden
@@ -697,7 +697,7 @@ work has to discriminate if the number of clumps in a ring of N bits is strictly
 smaller than 2 or not. One clump is a sequence of identical bits bounded by
 bits of the other kind. The patterns are generated through a Monte Carlo
 method in which the mean number of clumps is controlled by a parameter
-k (Mézard & Nadal, 1989). We generated training sets of P patterns with
+k (Mezard & Nadal, 1989). We generated training sets of P patterns with
 k = 3, corresponding to a mean number of clumps of ≈ 1.5, for rings of
 N = 10 and N = 25 bits. The generalization error corresponding to sev-
 eral learning algorithms, estimated with independently generated testing
@@ -758,7 +758,7 @@ NEWGROUP
 Figure 2: Two or more clumps for two ring sizes, N = 10 and N = 25. Gen-
 eralization error ϵg versus size of the training set P, for different algorithms.
 N = 10: backpropagation (Solla, 1989), Stepwise (Knerr et al., 1990). N = 25:
-Tiling (Mézard & Nadal, 1989), Upstart (Frean, 1990). Results with the Growth
+Tiling (Mezard & Nadal, 1989), Upstart (Frean, 1990). Results with the Growth
 Algorithm (Nadal, 1989) are indistinguishable from those of Tiling at the scale
 of the figure. Points without error bars correspond to best results. Results of
 MonoPlane and NetLines are averages over 25 tests.
@@ -1026,7 +1026,7 @@ J. Manuel Torres Moreno and Mirta B. Gordon
 εJ
 1XPEHU RI ZHLJKWV
 Figure 7: Iris database: Generalization error ϵg versus number of parameters.
-1: offset, 2: backpropagation (Martinez & Estève, 1992); 4,5: backpropagation
+1: offset, 2: backpropagation (Martinez & Esteve, 1992); 4,5: backpropagation
 (Verma & Mulawka, 1995); 3,6: gradient-descent orthogonalized training (Verma
 & Mulawka, 1995).
 efficient perceptron training algorithm. Learning is fast not only because
@@ -1108,11 +1108,11 @@ units.
 1028
 J. Manuel Torres Moreno and Mirta B. Gordon
 Acknowledgments
-J.M. thanks Consejo Nacional de Ciencia y Tecnolog´ıa and Universidad
-Aut´onoma Metropolitana, México, for financial support (grant 65659).
+J.M. thanks Consejo Nacional de Ciencia y Tecnologıa and Universidad
+Autonoma Metropolitana, Mexico, for financial support (grant 65659).
 References
 Alpaydin, E. A. I. (1990). Neural models of supervised and unsupervised learning. Un-
-published doctoral dissertation, Ecole Polytechnique Fédérale de Lausanne,
+published doctoral dissertation, Ecole Polytechnique Federale de Lausanne,
 Switzerland.
 Biehl, M., & Opper, M. (1991). Tilinglike learning in the parity machine. Physical
 Review A, 44, 6888.
@@ -1153,7 +1153,7 @@ Recognition, Oct. 28–31, Paris, vol. 4.
 Classification Tasks with Binary Units
 1029
 Gascuel, O. (1995). Symenu. Collective Paper (Gascuel O. Coordinator) (Tech. Rep.).
-5èmes Journées Nationales du PRC-IA Teknea, Nancy.
+5emes Journees Nationales du PRC-IA Teknea, Nancy.
 Geman, S., Bienenstock, E., & Doursat, R. (1992). Neural networks and the
 bias/variance dilemma. Neural Computation, 4(1), 1–58.
 Goodman, R. M., Smyth, P., Higgins, C. M., & Miller, J. W. (1992). Rule-based
@@ -1178,14 +1178,14 @@ Hoehfeld, M., & Fahlman, S. (1991). Learning with limited numerical precision us
 the cascade correlation algorithm (Tech. Rep. No. CMU-CS-91-130). Pittsburgh:
 Carnegie Mellon University.
 Knerr, S., Personnaz, L., & Dreyfus, G. (1990). Single-layer learning revisited: A
-stepwise procedure for building and training a neural network. In J. Hérault
+stepwise procedure for building and training a neural network. In J. Herault
 & F. Fogelman (Eds.), Neurocomputing, algorithms, architectures and applications
 (pp. 41–50). Berlin: Springer-Verlag.
-Marchand, M., Golea, M., & Ruj´an, P. (1990). A convergence theorem for sequen-
+Marchand, M., Golea, M., & Rujan, P. (1990). A convergence theorem for sequen-
 tial learning in two-layer perceptrons. Europhysics Letters, 11, 487–492.
-Martinez, D., & Estève, D. (1992). The offset algorithm: Building and learning
+Martinez, D., & Esteve, D. (1992). The offset algorithm: Building and learning
 method for multilayer neural networks. Europhysics Letters, 18, 95–100.
-Mézard, M., & Nadal, J.-P. (1989). Learning in feedforward layered networks:
+Mezard, M., & Nadal, J.-P. (1989). Learning in feedforward layered networks:
 The Tiling algorithm. J. Phys. A: Math. and Gen., 22, 2191–2203.
 Mukhopadhyay, S., Roy, A., Kim, L. S., & Govil, S. (1993). A polynomial time al-
 gorithm for generating neural networks for pattern classification: Its stability

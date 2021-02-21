@@ -2,18 +2,18 @@ Nom du fichier: kessler94715.pdf
 
 Extraction of terminology in the field of
 construction
-1st Rémy Kessler
-Université Bretagne Sud
+1st Remy Kessler
+Universite Bretagne Sud
 CNRS 6074A
 56017 Vannes,France
 remy.kessler@univ-ubs.fr
-2nd Nicolas Béchet
-Université Bretagne Sud
+2nd Nicolas Bechet
+Universite Bretagne Sud
 CNRS 6074A
 56017 Vannes,France
 nicolas.bechet@irisa.fr
 3rd Giuseppe Berio
-Université Bretagne Sud
+Universite Bretagne Sud
 CNRS 6074A
 56017 Vannes,France
 giuseppe.berio@univ-ubs.fr
@@ -302,8 +302,8 @@ We use grammatical labels generated in the previous step
 (section V-B) and linguistic patterns to retrieve collocations
 such as NOUN-NOUN, NOUN-PREP-NOUN. These patterns
 are frequently found in the literature [6] to capture specific
-words in French like ”carte de crédit”(credit card) and discard
-3-gram like ’créditer sa carte’ (credit his card) with the
+words in French like ”carte de credit”(credit card) and discard
+3-gram like ’crediter sa carte’ (credit his card) with the
 pattern VERB-PREP-NOUN. Among frequent patterns found
 in literature, those patterns have been selected according to the
 statistics obtained from a knowledge model of another field
@@ -462,8 +462,8 @@ extract.
 Strict evaluation shows good quality results (0.77). Anal-
 ysis of the results shows that the main error is related to
 ”incomplete n-grams”. For example, the 3-gram “personne
-`a mobilité” (person with mobility) is not relevant while the
-4-gram “personne `a mobilité réduite” (person with reduced
+a mobilite” (person with mobility) is not relevant while the
+4-gram “personne a mobilite reduite” (person with reduced
 mobility ) can belong to the field of construction. Some errors
 can also be traced back to the CCTP documents. For example,
 “engin de guerre” (war machine) is a term which does not
@@ -508,10 +508,10 @@ pp. 227–238.
 [5] P. Kluegl, M. Toepfer, P.-D. Beck, G. Fette, and F. Puppe, “Uima ruta:
 Rapid development of rule-based information extraction applications,”
 Natural Language Engineering, vol. 22, no. 1, p. 1–40, 2016.
-[6] M. Roche and Y. Kodratoff, “Exit: Un système itératif pour l’extraction
-de la terminologie du domaine `a partir de corpus spécialisés,” in
+[6] M. Roche and Y. Kodratoff, “Exit: Un systeme iteratif pour l’extraction
+de la terminologie du domaine a partir de corpus specialises,” in
 Proceedings of JADT 4, 2004, pp. 946–956.
-[7] B. Biébow, S. Szulman, and A. J. B. Clément, “Terminae: A linguistics-
+[7] B. Biebow, S. Szulman, and A. J. B. Clement, “Terminae: A linguistics-
 based tool for the building of a domain ontology,” in Knowledge
 Acquisition, Modeling and Management, D. Fensel and R. Studer, Eds.,
 1999, pp. 49–66.

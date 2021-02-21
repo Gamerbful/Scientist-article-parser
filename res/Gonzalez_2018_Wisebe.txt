@@ -2,13 +2,13 @@ Nom du fichier: Gonzalez_2018_Wisebe.pdf
 
 WiSeBE: Window-Based Sentence
 Boundary Evaluation
-Carlos-Emiliano Gonz´alez-Gallardo1,2(B) and Juan-Manuel Torres-Moreno1,2
-1 LIA - Université d’Avignon et des Pays de Vaucluse, 339 chemin des Meinajaries,
+Carlos-Emiliano Gonzalez-Gallardo1,2(B) and Juan-Manuel Torres-Moreno1,2
+1 LIA - Universite d’Avignon et des Pays de Vaucluse, 339 chemin des Meinajaries,
 84140 Avignon, France
 carlos-emiliano.gonzalez-gallardo@alumni.univ-avignon.fr,
 juan-manuel.torres@univ-avignon.fr
-2 Département de GIGL, ´Ecole Polytechnique de Montréal,
-C.P. 6079, succ. Centre-ville, Montréal, Québec H3C 3A7, Canada
+2 Departement de GIGL, Ecole Polytechnique de Montreal,
+C.P. 6079, succ. Centre-ville, Montreal, Quebec H3C 3A7, Canada
 Abstract. Sentence Boundary Detection (SBD) has been a major
 research topic since Automatic Speech Recognition transcripts have been
 used for further Natural Language Processing tasks like Part of Speech
@@ -46,7 +46,7 @@ c
 I. Batyrshin et al. (Eds.): MICAI 2018, LNAI 11289, pp. 119–131, 2018.
 https://doi.org/10.1007/978-3-030-04497-8_10
 120
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 given a transcript, does it exist a unique reference? Or, is it possible that the
 same transcript could be segmented in five different ways by five different people
 in the same conditions? If so, which one is correct; and more important, how
@@ -142,7 +142,7 @@ Specification V5.0 guideline (SimpleMDE V5.0) [27], dividing the transcripts in
 Semantic Units.
 2 https://www.ldc.upenn.edu/.
 122
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 A Semantic Unit (SU) is considered to be an atomic element of the transcript
 that manages to express a complete thought or idea on the part of the speaker
 [27]. Sometimes a SU corresponds to the equivalent of a sentence in written text,
@@ -191,7 +191,7 @@ multi-reference framework. They considered a period (.) valid if at least five o
 their 10 correctors agreed on its position.
 WiSeBE: Window-Based Sentence Boundary Evaluation
 123
-Kol´aˇr and Lamel [13] considered two independent references to evaluate their
+Kolaˇr and Lamel [13] considered two independent references to evaluate their
 system and proposed two approaches. The fist one was to calculate the SER for
 each of one the two available references and then compute their mean. They
 found this approach to be very strict because for those boundaries where no
@@ -241,7 +241,7 @@ RG = {d1, d2, ..., dn}
 (3)
 where
 124
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 dj =
 m
 �
@@ -360,7 +360,7 @@ The number of segments per transcript and reference can be seen in Table 2. An
 interesting remark is that ref3 assigns about 43% less boundaries than the mean
 of the other two references.
 126
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 Table 2. Manual dataset segmentation
 Reference v1
 v2
@@ -608,7 +608,7 @@ F 1mean vs. W iSeBE
 Results form Table 5 may give an idea that WiSeBE is just an scaled F1mean.
 While it is true that they show a linear correlation, WiSeBE may produce a
 128
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 Table 5. WiSeBE evaluation
 Transcript
 System F1mean F1RW
@@ -784,7 +784,7 @@ Acknowledgments. We would like to acknowledge the support of CHIST-ERA for
 funding this work through the Access Multilingual Information opinionS (AMIS),
 (France - Europe) project.
 We also like to acknowledge the support given by the Prof. Hanifa Boucheneb from
-VERIFORM Laboratory (´Ecole Polytechnique de Montréal).
+VERIFORM Laboratory (Ecole Polytechnique de Montreal).
 References
 1. Bohac, M., Blavka, K., Kucharova, M., Skodova, S.: Post-processing of the recog-
 nized speech for web presentation of large audio archive. In: 2012 35th International
@@ -801,18 +801,18 @@ transcript based on word vector. In: LREC (2016)
 5. Fohr, D., Mella, O., Illina, I.: New paradigm in speech recognition: deep neural net-
 works. In: IEEE International Conference on Information Systems and Economic
 Intelligence (2017)
-6. Gonz´alez-Gallardo, C.E., Hajjem, M., SanJuan, E., Torres-Moreno, J.M.: Tran-
+6. Gonzalez-Gallardo, C.E., Hajjem, M., SanJuan, E., Torres-Moreno, J.M.: Tran-
 scripts informativeness study: an approach based on automatic summarization. In:
-Conférence en Recherche d’Information et Applications (CORIA), Rennes, France,
+Conference en Recherche d’Information et Applications (CORIA), Rennes, France,
 May (2018)
-7. Gonz´alez-Gallardo, C.E., Torres-Moreno, J.M.: Sentence boundary detection for
+7. Gonzalez-Gallardo, C.E., Torres-Moreno, J.M.: Sentence boundary detection for
 French with subword-level information vectors and convolutional neural networks.
 arXiv preprint arXiv:1802.04559 (2018)
 8. Gotoh, Y., Renals, S.: Sentence boundary detection in broadcast speech transcripts.
 In: ASR2000-Automatic Speech Recognition: Challenges for the new Millenium
 ISCA Tutorial and Research Workshop (ITRW) (2000)
 130
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 9. Hinton, G., et al.: Deep neural networks for acoustic modeling in speech recogni-
 tion: the shared views of four research groups. IEEE Signal Process. Mag. 29(6),
 82–97 (2012)
@@ -824,10 +824,10 @@ put. Linguist. 32(4), 485–525 (2006)
 12. Klejch, O., Bell, P., Renals, S.: Punctuated transcription of multi-genre broadcasts
 using acoustic and lexical approaches. In: 2016 IEEE Spoken Language Technology
 Workshop (SLT), pp. 433–440. IEEE (2016)
-13. Kol´aˇr, J., Lamel, L.: Development and evaluation of automatic punctuation for
+13. Kolaˇr, J., Lamel, L.: Development and evaluation of automatic punctuation for
 French and english speech-to-text. In: Thirteenth Annual Conference of the Inter-
 national Speech Communication Association (2012)
-14. Kol´aˇr, J., ˇSvec, J., Psutka, J.: Automatic punctuation annotation in Czech broad-
+14. Kolaˇr, J., ˇSvec, J., Psutka, J.: Automatic punctuation annotation in Czech broad-
 cast news speech. In: SPECOM 2004 (2004)
 15. Liu, Y., Chawla, N.V., Harper, M.P., Shriberg, E., Stolcke, A.: A study in machine
 learning from imbalanced data for sentence boundary detection in speech. Comput.
@@ -854,7 +854,7 @@ R. Soc. Lond. 58, 240–242 (1895)
 phrase-based translation. In: Proceedings of the International Workshop on Spoken
 Language Translation (IWSLT), South Lake Tahoe, CA, USA (2014)
 23. Rott, M., ˇCerva, P.: Speech-to-text summarization using automatic phrase extrac-
-tion from recognized text. In: Sojka, P., Hor´ak, A., Kopeˇcek, I., Pala, K. (eds.) TSD
+tion from recognized text. In: Sojka, P., Horak, A., Kopeˇcek, I., Pala, K. (eds.) TSD
 2016. LNCS (LNAI), vol. 9924, pp. 101–108. Springer, Cham (2016). https://doi.
 org/10.1007/978-3-319-45510-5 12
 24. Shriberg, E., Stolcke, A.: Word predictability after hesitations: a corpus-based

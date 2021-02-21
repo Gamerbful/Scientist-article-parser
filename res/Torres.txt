@@ -2,7 +2,7 @@ Nom du fichier: Torres.pdf
 
 Summary Evaluation
 with and without References
-Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Vel´azquez-Morales
+Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velazquez-Morales
 Abstract—We
 study
 a
@@ -80,21 +80,21 @@ Juan-Manuel
 Torres-Moreno
 is
 with
-LIA/Université
+LIA/Universite
 d’Avignon,
 France
 and
-´Ecole
+Ecole
 Polytechnique
 de
-Montréal,
+Montreal,
 Canada
 (juan-manuel.torres@univ-avignon.fr).
 Eric
 SanJuan
 is
 with
-LIA/Université
+LIA/Universite
 d’Avignon,
 France
 (eric.sanjuan@univ-avignon.fr).
@@ -116,10 +116,10 @@ IULA/Universitat
 Pompeu
 Fabra,
 Spain;
-LIA/Université d’Avignon, France and Instituto de Ingenier´ıa/UNAM, Mexico
+LIA/Universite d’Avignon, France and Instituto de Ingenierıa/UNAM, Mexico
 (iria.dacunha@upf.edu).
 Patricia
-Vel´azquez-Morales
+Velazquez-Morales
 is
 with
 VM
@@ -451,13 +451,13 @@ Blogs06 Text Collection) is used: 25 clusters and targets
 (i.e., target entity and questions) were used – 1,167,735
 words.
 5) Generic single-document summarization in Spanish
-using the Medicina Cl´ınica5 corpus, which is composed
+using the Medicina Clınica5 corpus, which is composed
 of 50 medical articles in Spanish, each one with its
 corresponding author abstract – 124,929 words.
 6) Generic single document summarization in French using
 the “Canadien French Sociological Articles” corpus
 from the journal Perspectives interdisciplinaires sur le
-travail et la santé (PISTES)6. It contains 50 sociological
+travail et la sante (PISTES)6. It contains 50 sociological
 articles in French, each one with its corresponding
 author abstract – 381,039 words.
 7) Generic multi-document-summarization in French using
@@ -801,7 +801,7 @@ p < 0.25
 -0.14
 p < 0.25
 TABLE V
-SPEARMAN ρ OF CONTENT-BASED MEASURES WITH ROUGE IN THE Medicina Cl´ınica CORPUS (SPANISH)
+SPEARMAN ρ OF CONTENT-BASED MEASURES WITH ROUGE IN THE Medicina Clınica CORPUS (SPANISH)
 Mesure
 ROUGE-1
 p-value
@@ -885,15 +885,15 @@ multi-document summarizer guided by a query, the search
 systems targeted information (focused IR) and the question
 answering systems.
 ACKNOWLEDGMENT
-We are grateful to the Programa Ram´on y Cajal from
-Ministerio de Ciencia e Innovaci´on, Spain. This work is
+We are grateful to the Programa Ramon y Cajal from
+Ministerio de Ciencia e Innovacion, Spain. This work is
 partially supported by: a postdoctoral grant from the National
 Program for Mobility of Research Human Resources (National
 Plan of Scientific Research, Development and Innovation
-2008-2011, Ministerio de Ciencia e Innovaci´on, Spain); the
+2008-2011, Ministerio de Ciencia e Innovacion, Spain); the
 research project CONACyT, number 82050, and the research
-project PAPIIT-DGAPA (Universidad Nacional Aut´onoma de
-México), number IN403108.
+project PAPIIT-DGAPA (Universidad Nacional Autonoma de
+Mexico), number IN403108.
 Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velázquez-Morales
 18
 Polibits (42) 2010
@@ -1001,7 +1001,7 @@ Workshop on Automatic Summarization, 2000, pp. 69–78.
 of Summaries in a Cross-lingual Environment using Content-based
 Metrics,” in COLING 2002, Taipei, Taiwan, August 2002, pp. 849–855.
 [7] D. R. Radev, S. Teufel, H. Saggion, W. Lam, J. Blitzer, H. Qi, A. C¸ elebi,
-D. Liu, and E. Dr´abek, “Evaluation challenges in large-scale document
+D. Liu, and E. Drabek, “Evaluation challenges in large-scale document
 summarization,” in ACL’03, 2003, pp. 375–382.
 [8] K. Papineni, S. Roukos, T. Ward, , and W. J. Zhu, “BLEU: a method
 for automatic evaluation of machine translation,” in ACL’02, 2002, pp.
@@ -1041,7 +1041,7 @@ Math. Stat., vol. 22, no. 1, pp. 79–86, 1951.
 [17] S. Siegel and N. Castellan, Nonparametric Statistics for the Behavioral
 Sciences.
 McGraw-Hill, 1998.
-[18] C. de Loupy, M. Guégan, C. Ayache, S. Seng, and J.-M. Torres-Moreno,
+[18] C. de Loupy, M. Guegan, C. Ayache, S. Seng, and J.-M. Torres-Moreno,
 “A
 French
 Human
@@ -1065,13 +1065,13 @@ in text summarization and topic segmentation,” in MICAI’07, 2007, pp.
 [20] J.-M.
 Torres-Moreno,
 P.
-Vel´azquez-Morales,
+Velazquez-Morales,
 and
 J.-G.
 Meunier,
-“Condensés de textes par des méthodes numériques,” in JADT’02, vol. 2,
+“Condenses de textes par des methodes numeriques,” in JADT’02, vol. 2,
 St Malo, France, 2002, pp. 723–734.
-[21] J. Vivaldi, I. da Cunha, J.-M. Torres-Moreno, and P. Vel´azquez-Morales,
+[21] J. Vivaldi, I. da Cunha, J.-M. Torres-Moreno, and P. Velazquez-Morales,
 “Automatic
 summarization
 using
@@ -1080,7 +1080,7 @@ and
 semantic
 resources,” in LREC’10, vol. 2, Malta, 2010, p. In press.
 [22] J.-M. Torres-Moreno and J. Ramirez, “REG : un algorithme glouton
-appliqué au résumé automatique de texte,” in JADT’10.
+applique au resume automatique de texte,” in JADT’10.
 Rome, 2010,
 p. In press.
 [23] V. Yatsko and T. Vishnyakov, “A method for evaluating modern
@@ -1092,7 +1092,7 @@ Cambridge, Massachusetts: The MIT Press,
 1999.
 [25] K. Sp¨arck Jones, “Automatic summarising: The state of the art,” IPM,
 vol. 43, no. 6, pp. 1449–1481, 2007.
-[26] I. da Cunha, L. Wanner, and M. T. Cabré, “Summarization of specialized
+[26] I. da Cunha, L. Wanner, and M. T. Cabre, “Summarization of specialized
 discourse: The case of medical articles in spanish,” Terminology, vol. 13,
 no. 2, pp. 249–286, 2007.
 [27] C.-K. Chuah, “Types of lexical substitution in abstracting,” in ACL

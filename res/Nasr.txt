@@ -5,12 +5,12 @@ Portland, Oregon, USA, 21 June 2011. c⃝2011 Association for Computational Ling
 MACAON
 An NLP Tool Suite for Processing Word Lattices
 Alexis Nasr
-Frédéric Béchet
+Frederic Bechet
 Jean-Franc¸ois Rey
 Benoˆıt Favre
 Joseph Le Roux∗
 Laboratoire d’Informatique Fondamentale de Marseille- CNRS - UMR 6166
-Université Aix-Marseille
+Universite Aix-Marseille
 (alexis.nasr,frederic.bechet,jean-francois.rey,benoit.favre,joseph.le.roux)
 @lif.univ-mrs.fr
 Abstract
@@ -425,7 +425,7 @@ maca tagger associates to every lexical unit one or
 more part-of-speech labels.
 It is based on a
 trigram Hidden Markov Model trained on the
-French Treebank (Abeillé et al., 2003). The es-
+French Treebank (Abeille et al., 2003). The es-
 timation of the HMM parameters has been re-
 alized by the SRILM toolkit (Stolcke, 2002).
 maca anamorph produces the morphological anal-
@@ -490,7 +490,7 @@ which are briefly described here, the DEFINIENS
 project and the LUNA project.
 DEFINIENS (Barque et al., 2010) is a project that
 aims at structuring the definitions of a large coverage
-French lexicon, the Trésor de la langue franc¸aise.
+French lexicon, the Tresor de la langue franc¸aise.
 The lexicographic definitions have been processed
 by MACAON in order to decompose the definitions
 into complex semantico-syntactic units. The data
@@ -502,7 +502,7 @@ ing information from oral data about hotel booking.
 The word lattices produced by an ASR system have
 been processed by MACAON up to a partial syntactic
 level from which frames are built. More details can
-be found in (Béchet and Nasr, 2009). The key aspect
+be found in (Bechet and Nasr, 2009). The key aspect
 of the use of MACAON for the LUNA project is the
 ability to perform the linguistic analyses on the mul-
 tiple hypotheses produced by the ASR system. It is
@@ -532,11 +532,11 @@ rently under development, such as a named entity
 recognizer component and an interface with a de-
 pendency parser.
 References
-Anne Abeillé, Lionel Clément, and Franc¸ois Toussenel.
+Anne Abeille, Lionel Clement, and Franc¸ois Toussenel.
 2003.
 Building a treebank for french.
 In Anne
-Abeillé, editor, Treebanks. Kluwer, Dordrecht.
+Abeille, editor, Treebanks. Kluwer, Dordrecht.
 Steven Abney. 1996. Partial parsing via finite-state cas-
 cades. In Workshop on Robust Parsing, 8th European
 Summer School in Logic, Language and Information,
@@ -545,17 +545,17 @@ M. Attia, J. Foster, D. Hogan, J. Le Roux, L. Tounsi, and
 J. van Genabith. 2010. Handling Unknown Words in
 Statistical Latent-Variable Parsing Models for Arabic,
 English and French. In Proceedings of SPMRL.
-Lucie Barque, Alexis Nasr, and Alain Polguère. 2010.
-From the definitions of the trésor de la langue franc¸aise
+Lucie Barque, Alexis Nasr, and Alain Polguere. 2010.
+From the definitions of the tresor de la langue franc¸aise
 to a semantic database of the french language. In EU-
 RALEX 2010, Leeuwarden, Pays Bas.
-Frédéric Béchet and Alexis Nasr. 2009. Robust depen-
+Frederic Bechet and Alexis Nasr. 2009. Robust depen-
 dency parsing for spoken language understanding of
 spontaneous speech. In Interspeech, Brighton, United
 Kingdom.
 Olivier Blanc, Matthieu Constant, and Eric Laporte.
 2006. Outilex, plate-forme logicielle de traitement de
-textes écrits. In TALN 2006, Leuven.
+textes ecrits. In TALN 2006, Leuven.
 Nancy Ide and Laurent Romary.
 2004.
 International
@@ -564,7 +564,7 @@ ural language engineering, 10(3-4):211–225.
 M. Mohri, F. Pereira, and M. Riley. 2000. The design
 principles of a weighted finite-state transducer library.
 Theoretical Computer Science, 231(1):17–32.
-P. Nocera, G. Linares, D. Massonié, and L. Lefort. 2006.
+P. Nocera, G. Linares, D. Massonie, and L. Lefort. 2006.
 Phoneme lattice based A* search algorithm for speech
 recognition. In Text, Speech and Dialogue, pages 83–
 111. Springer.
@@ -574,11 +574,11 @@ terpretable Tree Annotation. In ACL.
 Benoˆıt Sagot and Pierre Boullier.
 2008.
 Sxpipe 2:
-architecture pour le traitement présyntaxique de cor-
+architecture pour le traitement presyntaxique de cor-
 pus bruts.
 Traitement Automatique des Langues,
 49(2):155–188.
-Benoˆıt Sagot, Lionel Clément, Eric Villemonte de la
+Benoˆıt Sagot, Lionel Clement, Eric Villemonte de la
 Clergerie, and Pierre Boullier. 2006. The lefff 2 Syn-
 tactic Lexicon for French: Architecture, Acquisition,
 Use.

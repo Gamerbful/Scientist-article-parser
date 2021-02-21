@@ -4,16 +4,16 @@ Coling 2008: Companion volume – Posters and Demonstrations, pages 23–26
 Manchester, August 2008
 A Scalable MMR Approach to Sentence Scoring
 for Multi-Document Update Summarization
-Florian Boudin ♮ and Marc El-Bèze ♮
+Florian Boudin ♮ and Marc El-Beze ♮
 ♮ Laboratoire Informatique d’Avignon
 339 chemin des Meinajaries, BP1228,
 84911 Avignon Cedex 9, France.
 florian.boudin@univ-avignon.fr
 marc.elbeze@univ-avignon.fr
 Juan-Manuel Torres-Moreno ♮,♭
-♭ ´Ecole Polytechnique de Montréal
+♭ Ecole Polytechnique de Montreal
 CP 6079 Succ. Centre Ville H3C 3A7
-Montréal (Québec), Canada.
+Montreal (Quebec), Canada.
 juan-manuel.torres@univ-avignon.fr
 Abstract
 We present SMMR, a scalable sentence

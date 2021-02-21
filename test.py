@@ -58,9 +58,31 @@ if __name__ == '__main__':
     partPattern = "^[0-9](\.[0-9])*$"
     matcher = re.compile(partPattern)
 
+
+
     auteur = "autheurs : "
     index = 0
     nom = ""
+    trouve = 0
+
+    def name_recognition(words):
+        global nom,index,auteur,trouve
+        for elt in ner_tagger.tag(words):
+            if elt[1] == "PERSON":
+                nom += elt[0] + " "
+                trouve += 1
+            else:
+                if nom != "":
+                    auteur += nom + "et "
+                    nom = ""
+                    trouve = 0
+    def check():
+        global nom,auteur,trouve
+        if nom != "":
+            if trouve > 1:
+                auteur += nom + "et "
+                nom = ""
+
     for f in dirl:
         try:
             with fitz.open(dirname + f) as doc:
@@ -69,25 +91,12 @@ if __name__ == '__main__':
                 auteur = ""
                 trouve = 0
                 for page in doc:
-                    pageTxt = page.get_text().replace("`e","è").replace("´e","é").replace("^i","î")
+                    pageTxt = page.get_text().replace("`","").replace("´","").replace("^","")
                     for line in pageTxt.splitlines():
                         if index < 10:
                             words = nltk.word_tokenize(line)
-                            yo = ner_tagger.tag(words)
-                            for elt in yo:
-                                if elt[1] == "PERSON":
-                                    nom += elt[0] + " "
-                                    trouve += 1
-                                else:
-                                    if nom != "":
-                                        auteur += nom + "et "
-                                        nom = ""
-                                        trouve = 0
-                            if nom != "":
-                                if trouve > 1:
-                                    auteur += nom + "et "
-                                    nom = ""
-                            trouve = 0
+                            name_recognition(words)
+                            check()
                         if matcher.match(line):
                             text += '\nNEWGROUP\n' + line + '\n'
                         else:

@@ -2,7 +2,7 @@ Nom du fichier: Das_Martins.pdf
 
 A Survey on Automatic Text Summarization
 Dipanjan Das
-André F.T. Martins
+Andre F.T. Martins
 Language Technologies Institute
 Carnegie Mellon University
 {dipanjan, afm}@cs.cmu.edu
@@ -1190,10 +1190,10 @@ Pexpand tree(t|s) consist in the usual factorized expression for PCFGs times a b
 distribution over the leaves of the tree (i.e. the words). In the end, the log probability
 is (heuristically) divided by the length of the sentence s in order not to penalize
 excessively longer sentences (this is done commonly in speech recognition).
-More recently, Daumé III and Marcu (2002) extended this approach to document
+More recently, Daume III and Marcu (2002) extended this approach to document
 compression by using rhetorical structure theory as in Marcu (1998a), where the
 entire document is represented as a tree, hence allowing not only to compress relevant
-sentences, but also to drop irrelevant ones. In this framework, Daumé III and Marcu
+sentences, but also to drop irrelevant ones. In this framework, Daume III and Marcu
 (2004) employed kernel methods to decide for each node in the tree whether or not
 it should be kept.
 
@@ -1622,10 +1622,10 @@ PhD thesis, University of Pennsylvania. [13, 20]
 Conroy, J. M. and O’leary, D. P. (2001). Text summarization via hidden markov
 models. In Proceedings of SIGIR ’01, pages 406–407, New York, NY, USA. [6]
 Cover, T. and Thomas, J. (1991). Elements of Information Theory. Wiley. [25]
-Daumé III, H. and Marcu, D. (2002). A noisy-channel model for document com-
+Daume III, H. and Marcu, D. (2002). A noisy-channel model for document com-
 pression. In Proceedings of the Conference of the Association of Computational
 Linguistics (ACL 2002). [20]
-Daumé III, H. and Marcu, D. (2004). A tree-position kernel for document compres-
+Daume III, H. and Marcu, D. (2004). A tree-position kernel for document compres-
 sion. In Proceedings of DUC2004. [20]
 Edmundson, H. P. (1969). New methods in automatic extracting. Journal of the
 ACM, 16(2):264–285. [2, 3, 4]
