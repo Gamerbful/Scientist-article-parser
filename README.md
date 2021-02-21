@@ -2,23 +2,19 @@
 
 
 
-# Scientist-article-parser
+## Nos réunions
 
-
-
-## Nos réunions toutes kawai
-
-Notre première semaine ♡
+Notre première semaine 
 
 
 ![Screenshot](agenda/agenda1.png)
 
-Notre Seconde semaine ♡♡♡
+Notre Seconde semaine
 
 ![Screenshot](agenda/agenda2.png)
 
 
-Notre troisième semaine ♡♡♡♡♡♡
+Notre troisième semaine
 
 ![Screenshot](agenda/agenda3.png)
 
@@ -48,3 +44,9 @@ nom de cet article .
   Le programme va ensuite utiliser la librairie "nltk" qui comporte des méthodes
 permettant d'identifier des noms propres . On écrit le nom de chaque auteur dans 
 le fichier texte.
+
+
+## Nos réunions ♫
+
+![Screenshot](agenda/reunion.png)
+![Screenshot](agenda/res.png)
