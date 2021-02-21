@@ -49,4 +49,11 @@ le fichier texte.
 ## Nos réunions ♫
 
 ![Screenshot](agenda/reunion.png)
-![Screenshot](agenda/res.png)
+
+![Screenshot](agenda/discord1.png)
+
+![Screenshot](agenda/discord2.png)
+
+![Screenshot](agenda/discord3.png)
+
+![Screenshot](agenda/discord4.png)
