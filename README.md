@@ -2,9 +2,6 @@
 
 
 
-
-![ScreenShot](https://drive.google.com/uc?export=view&id=1913oZeBZPBNiUuk8gu3ZSbLBA2l_VQtG)
-
 # Nos réunions toutes kawai
 Notre première semaine ♡
 ![ScreenShot](https://drive.google.com/uc?export=view&id=1qZ0wGHavW4RjEvvvyiZeu_l8eJjBkowb)
