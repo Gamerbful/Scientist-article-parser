@@ -4,8 +4,5 @@ Titre: Periods, Capitalized Words, etc.
 
 Auteurs: Andrei Mikheev∗
 
-<<<<<<< HEAD
 Aucun abstract n'a été trouvé
 
-=======
->>>>>>> 8d55be4bddfa8643cc0723730cbce557ab463294

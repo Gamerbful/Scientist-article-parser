@@ -1,13 +1,2 @@
 Nom du fichier: Nasr.pdf
 
-Titre: 
-
-<<<<<<< HEAD
-Auteurs: MACAON & Alexis Nasr & Jean-Franc¸ois Rey & Benoˆıt Favre & Joseph Le Roux∗
-
-Abstract : MACAON is a tool suite for standard NLP tasksdeveloped for French. MACAON has been de-signed to process both human-produced textand highly ambiguous word-lattices producedby NLP tools. MACAON is made of several na-tive modules for common tasks such as a tok-enization, a part-of-speech tagging or syntac-tic parsing, all communicating with each otherthrough XML files . In addition, exchange pro-tocols with external tools are easily definable.MACAON is a fast, modular and open tool, dis-tributed under GNU Public License.1
-
-=======
-Auteurs: MACAON & Alexis Nasr & Frédéric Béchet & Jean-Franc¸ois Rey & Benoˆıt Favre & Joseph Le Roux∗
-
->>>>>>> 8d55be4bddfa8643cc0723730cbce557ab463294
