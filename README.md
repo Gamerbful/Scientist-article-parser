@@ -11,7 +11,7 @@
 Notre première semaine ♡
 
 
-![](images/agenda1.JPG)
+![](agenda/agenda1.JPG)
 
 Notre Seconde semaine ♡♡♡
 
