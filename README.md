@@ -2,10 +2,6 @@
 
 
 
-# Scientist-article-parser
-
-
-
 ## Nos réunions toutes kawai
 
 Notre première semaine ♡
@@ -48,3 +44,9 @@ nom de cet article .
   Le programme va ensuite utiliser la librairie "nltk" qui comporte des méthodes
 permettant d'identifier des noms propres . On écrit le nom de chaque auteur dans 
 le fichier texte.
+
+
+## Nos réunions ♫
+
+![Screenshot](agenda/reunion.png)
+![Screenshot](agenda/reunion.png)
