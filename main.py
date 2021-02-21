@@ -49,7 +49,6 @@ def find_title(text,author):
     res = ""
     splitedText = text.splitlines()
     authorList = author.split(" & ")
-    #print(authorList)
     for i in range(0,5):
         if not(numberMatcher.match(splitedText[i])):
             if authorList[0] in splitedText[i]:
@@ -69,7 +68,7 @@ def find_abstract(text):
         if (not vf) and introMatcher.match(line):
             break
     if vf:
-        res = "Aucun abstract n'a été trouvé"
+        res = "No abstract was found"
     return res
 
 if __name__ == '__main__':
@@ -96,7 +95,10 @@ if __name__ == '__main__':
         except FileExistsError:
             pass
 
+    print("Running ...")
+
     for f in dirl:
+        print("Parse of : "+f)
         try:
             with fitz.open(dirname + f) as doc:
                 text = ""
@@ -110,7 +112,6 @@ if __name__ == '__main__':
                 fichier.write("Titre: " + title + "\n\n")
                 fichier.write("Auteurs: " + author + "\n\n")
                 fichier.write(abstract.replace("Abstract","Abstract : ") + "\n\n")
-                # fichier.write(text)
                 fichier.close()
         except RuntimeError:
             print("Cannot open file \"" + f + "\" (not PDF or may be corrupted)")
