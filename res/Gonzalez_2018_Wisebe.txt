@@ -1,6 +1,0 @@
-Nom du fichier: Gonzalez_2018_Wisebe.pdf
-
-Titre: WiSeBE: Window-Based Sentence Boundary Evaluation 
-
-Auteurs: Juan-Manuel Torres-Moreno1,2
-
