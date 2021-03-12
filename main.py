@@ -20,6 +20,8 @@ abstractPattern = "^.*[Aa][Bb][Ss][Tt][Rr][Aa][Cc][Tt].*$"
 abstractMatcher = re.compile(abstractPattern)
 introPattern = "^.*[Ii][Nn][Tt][Rr][Oo][Dd][Uu][Cc][Tt][Ii][Oo][Nn].*$"
 introMatcher = re.compile(introPattern)
+referencesPattern = "References"
+referencesMatcher = re.compile(referencesPattern)
 
 # --- Function for name recognition ---
 def find_author(text):
@@ -71,6 +73,19 @@ def find_abstract(text):
         res = "No abstract was found"
     return res
 
+def find_references(text):
+    res = ""
+    splitedText = text.splitlines()
+    vf = False
+    for line in splitedText:
+        if referencesMatcher.match(line):
+            vf = True
+        if vf:
+            res = res + line
+    if not vf:
+        res = "No references was found"
+    return res
+
 if __name__ == '__main__':
 
     if len(sys.argv) < 2:
@@ -109,9 +124,11 @@ if __name__ == '__main__':
                 author = find_author(text)
                 title = find_title(text, author)
                 abstract = find_abstract(text)
+                references = find_references(text)
                 fichier.write("Titre: " + title + "\n\n")
                 fichier.write("Auteurs: " + author + "\n\n")
                 fichier.write(abstract.replace("Abstract","Abstract : ") + "\n\n")
+                fichier.write(references.replace("References","References : ") + "\n\n")
                 fichier.close()
         except RuntimeError:
             print("Cannot open file \"" + f + "\" (not PDF or may be corrupted)")
