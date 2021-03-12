@@ -4,6 +4,9 @@ import nltk
 from nltk.tag import StanfordNERTagger
 from nltk.stem import PorterStemmer
 
+from lxml import etree
+import xml.etree.cElementTree as ET
+
 import os, sys, re
 
 jar = './stanford-ner-2020-11-17/stanford-ner.jar'
@@ -69,8 +72,6 @@ def find_email(text):
         for word in words:
             if emailMatcher.match(word):
                 res += " & " + splitedText[i] + " "
-
-
     return res
 
 def find_abstract(text):
@@ -101,13 +102,62 @@ def find_references(text):
         res = "No references was found"
     return res
 
+def write_xml(text,name):
+    author = find_author(text)
+    title = find_title(text, author)
+    abstract = find_abstract(text)
+    refs = find_references(text)
+
+    article = etree.Element("article")
+    preamble = etree.SubElement(article,"preamble")
+    preamble.text = name + ".pdf"
+    titre = etree.SubElement(article,"titre")
+    titre.text = title
+    auteur = etree.SubElement(article,"auteur")
+    auteur.text = author
+    abstractB = etree.SubElement(article,"abstract")
+    abstractB.text = abstract
+    biblio = etree.SubElement(article,"biblio")
+    biblio.text = refs
+
+    tree = ET.ElementTree(article)
+    tree.write("res/" + name + ".xml")
+
+def write_text(text,name):
+    author = find_author(text)
+    title = find_title(text, author)
+    abstract = find_abstract(text)
+    references = find_references(text)
+
+    file = open("res/" + name + ".txt","w+", encoding='utf-8')
+    file.write("Nom du fichier: " + f + "\n\n")
+    file.write("Titre: " + title + "\n\n")
+    file.write("Auteurs: " + author + "\n\n")
+    file.write(abstract.replace("Abstract","Abstract : ") + "\n\n")
+    file.write(references.replace("References","References : ") + "\n\n")
+    file.close()
+
 if __name__ == '__main__':
 
-    if len(sys.argv) < 2:
-        print("usage: parser.py directory")
+    if len(sys.argv) > 3:
+        print("usage: main.py [-x|-t] directory")
         sys.exit(1)
 
-    dirname = sys.argv[1]
+    dirname = ""
+    command = ""
+
+    if len(sys.argv) < 3:
+        dirname = sys.argv[1]
+    else:
+        if sys.argv[1] == "-x" or sys.argv[1] == "-t":
+            dirname = sys.argv[2]
+            command = sys.argv[1]
+        elif sys.argv[2] == "-x" or sys.argv[2] == "-t":
+            dirname = sys.argv[1]
+            command = sys.argv[2]
+        else:
+            print("usage: main.py directory [-x|-t]")
+            sys.exit(1)
 
     dirl = []
     try:
@@ -134,17 +184,15 @@ if __name__ == '__main__':
                 text = ""
                 for page in doc:
                     text += page.get_text().replace("^i","î").replace("`e","è").replace("´e","é")
-                fichier = open("res/" + f[:len(f)-4] + ".txt","w+", encoding='utf-8')
-                fichier.write("Nom du fichier: " + f + "\n\n")
-                author = find_author(text)
-                title = find_title(text, author)
-                email = find_email(text)
-                abstract = find_abstract(text)
-                references = find_references(text)
-                fichier.write("Titre: " + title + "\n\n")
-                fichier.write("Auteurs: " + author + email + "\n\n")
-                fichier.write(abstract.replace("Abstract","Abstract : ") + "\n\n")
-                fichier.write(references.replace("References","References : ") + "\n\n")
-                fichier.close()
+                if command != "":
+                    if command == "-x":
+                        write_xml(text,f[:len(f)-4])
+                    elif command == "-t":
+                        write_text(text,f[:len(f)-4])
+                    else:
+                        print("usage: main.py directory [-x|-t]")
+                        sys.exit(1)
+                else:
+                    write_text(text,f[:len(f)-4])
         except RuntimeError:
             print("Cannot open file \"" + f + "\" (not PDF or may be corrupted)")
