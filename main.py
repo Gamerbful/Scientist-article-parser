@@ -22,6 +22,8 @@ introPattern = "^.*[Ii][Nn][Tt][Rr][Oo][Dd][Uu][Cc][Tt][Ii][Oo][Nn].*$"
 introMatcher = re.compile(introPattern)
 referencesPattern = "References"
 referencesMatcher = re.compile(referencesPattern)
+emailPattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+emailMatcher = re.compile(emailPattern)
 
 # --- Function for name recognition ---
 def find_author(text):
@@ -56,6 +58,19 @@ def find_title(text,author):
             if authorList[0] in splitedText[i]:
                 break
             res += splitedText[i] + " "
+    return res
+
+def find_email(text):
+    res = ""
+    splitedText = text.splitlines()
+
+    for i in range(0,10):
+        words = splitedText[i].split(" ")
+        for word in words:
+            if emailMatcher.match(word):
+                res += " & " + splitedText[i] + " "
+
+
     return res
 
 def find_abstract(text):
@@ -123,10 +138,11 @@ if __name__ == '__main__':
                 fichier.write("Nom du fichier: " + f + "\n\n")
                 author = find_author(text)
                 title = find_title(text, author)
+                email = find_email(text)
                 abstract = find_abstract(text)
                 references = find_references(text)
                 fichier.write("Titre: " + title + "\n\n")
-                fichier.write("Auteurs: " + author + "\n\n")
+                fichier.write("Auteurs: " + author + email + "\n\n")
                 fichier.write(abstract.replace("Abstract","Abstract : ") + "\n\n")
                 fichier.write(references.replace("References","References : ") + "\n\n")
                 fichier.close()
