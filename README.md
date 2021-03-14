@@ -57,3 +57,9 @@ le fichier texte.
 ![Screenshot](agenda/discord3.png)
 
 ![Screenshot](agenda/discord4.png)
+
+![Screenshot](agenda/discord5.png)
+
+![Screenshot](agenda/discord6.png)
+
+![Screenshot](agenda/discord7.png)
