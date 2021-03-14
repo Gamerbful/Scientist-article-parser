@@ -42,12 +42,12 @@ def find_author(text):
                 found += 1
             else:
                 if name != "":
-                    res += name + "& "
+                    res += name + ", "
                     name = ""
                     found = 0
         if name != "":
             if found > 1:
-                res += name + "& "
+                res += name + ", "
                 name = ""
         found = 0
     return res[0:len(res)-3]
@@ -55,7 +55,7 @@ def find_author(text):
 def find_title(text,author):
     res = ""
     splitedText = text.splitlines()
-    authorList = author.split(" & ")
+    authorList = author.split(" , ")
     for i in range(0,5):
         if not(numberMatcher.match(splitedText[i])):
             if authorList[0] in splitedText[i]:
@@ -71,7 +71,7 @@ def find_email(text):
         words = splitedText[i].split(" ")
         for word in words:
             if emailMatcher.match(word):
-                res += " & " + splitedText[i] + " "
+                res += " , " + splitedText[i] + " "
     return res
 
 def find_abstract(text):
@@ -120,8 +120,9 @@ def write_xml(text,name):
     biblio = etree.SubElement(article,"biblio")
     biblio.text = refs
 
-    tree = ET.ElementTree(article)
-    tree.write("res/" + name + ".xml")
+    file = open("res/" + name + ".xml","w+", encoding='utf-8')
+    file.write((etree.tostring(article,pretty_print=True).decode("utf-8")))
+    file.close()
 
 def write_text(text,name):
     author = find_author(text)
@@ -183,7 +184,7 @@ if __name__ == '__main__':
             with fitz.open(dirname + f) as doc:
                 text = ""
                 for page in doc:
-                    text += page.get_text().replace("^i","î").replace("`e","è").replace("´e","é")
+                    text += page.get_text().replace("^i","î").replace("`e","e").replace("´e","e")
                 if command != "":
                     if command == "-x":
                         write_xml(text,f[:len(f)-4])
