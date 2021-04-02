@@ -28,6 +28,15 @@ referencesMatcher = re.compile(referencesPattern)
 emailPattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 emailMatcher = re.compile(emailPattern)
 
+discussionPattern = "^.*[D][Ii][Ss][Cc][Uu][Ss][Ss][Ii][Oo][Nn].*$"
+discussionMatcher = re.compile(discussionPattern)
+
+acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Mm][Ee][Nn][Tt][Ss].*$"
+acknowlegmentsMatcher = re.compile(acknowlegmentsPattern)
+
+conclusionsPattern = "^.*[Cc][Oo][Nn][Cc][Ll][Uu][Ss][Ii][Oo][Nn][Ss].*$"
+conclusionsMatcher = re.compile(conclusionsPattern)
+
 # --- Function for name recognition ---
 def find_author(text):
     res = ""
@@ -102,11 +111,28 @@ def find_references(text):
         res = "No references was found"
     return res
 
+def find_discussion(text):
+    res = ""
+    vf = False
+    splitedText = text.splitlines()
+    for line in splitedText:
+        if vf:
+            if acknowlegmentsMatcher.match(line) or conclusionsMatcher.match(line):
+                break
+            else:
+                res = res + line
+        if not vf and discussionMatcher.match(line):
+            vf = True
+    if not vf:
+        res = "No discussion was found"
+    return res;
+
 def write_xml(text,name):
     author = find_author(text)
     title = find_title(text, author)
     abstract = find_abstract(text)
     refs = find_references(text)
+    discussion = find_discussion(text)
 
     article = etree.Element("article")
     preamble = etree.SubElement(article,"preamble")
@@ -117,6 +143,8 @@ def write_xml(text,name):
     auteur.text = author
     abstractB = etree.SubElement(article,"abstract")
     abstractB.text = abstract
+    discussionB = etree.SubElement(article,"discussion")
+    discussionB.text = discussion
     biblio = etree.SubElement(article,"biblio")
     biblio.text = refs
 
@@ -129,6 +157,7 @@ def write_text(text,name):
     title = find_title(text, author)
     abstract = find_abstract(text)
     references = find_references(text)
+    discussion = find_discussion(text)
 
     file = open("res/" + name + ".txt","w+", encoding='utf-8')
     file.write("Nom du fichier: " + f + "\n\n")
@@ -136,6 +165,7 @@ def write_text(text,name):
     file.write("Auteurs: " + author + "\n\n")
     file.write(abstract.replace("Abstract","Abstract : ") + "\n\n")
     file.write(references.replace("References","References : ") + "\n\n")
+    file.write("Discussion : "+discussion+"\n\n")
     file.close()
 
 if __name__ == '__main__':

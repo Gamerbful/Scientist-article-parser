@@ -3,5 +3,6 @@
   <titre>Extraction of terminology in the field of construction Universite Bretagne Sud </titre>
   <auteur>Remy Kessler , Nicolas Bechet</auteur>
   <abstract>Abstract&#8212;We describe a corpus analysis method to extractterminology from a collection of technical specifications in thefield of construction. Using statistics and word n-grams analysis,we extract the terminology of the domain and then performpruning steps with linguistic patterns and internet queries toimprove the quality of the final terminology. Results are evaluatedby using a manual evaluation carried out by 6 experts in the field.Index Terms&#8212;terminology extraction, Internet queries, linguis-tic patterns.</abstract>
+  <discussion>No discussion was found</discussion>
   <biblio>No references was found</biblio>
 </article>
