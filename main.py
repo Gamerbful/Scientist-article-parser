@@ -27,7 +27,7 @@ concPattern = "^.*[C][Oo][Nn][Cc][Ll][Uu][Ss][Ii][Oo][Nn].*$"
 concMatcher = re.compile(concPattern)
 referencesPattern = "References"
 referencesMatcher = re.compile(referencesPattern)
-emailPattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+emailPattern = "(^.*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 emailMatcher = re.compile(emailPattern)
 discussionPattern = "^.*[D][Ii][Ss][Cc][Uu][Ss][Ss][Ii][Oo][Nn].*$"
 discussionMatcher = re.compile(discussionPattern)
@@ -208,6 +208,7 @@ def write_xml(text,name):
     conclu = find_conclusion(text)
     discussion = find_discussion(text)
     introduction = find_introduction(text)
+    affil = find_affiliation(text,author)
     corp = find_corp(text)
 
     article = etree.Element("article")
@@ -215,6 +216,7 @@ def write_xml(text,name):
     preamble.text = name + ".pdf"
     titre = etree.SubElement(article,"titre")
     titre.text = title
+    auteurs = etree.SubElement(article,"auteurs")
     for aut in author.split(", "):
         auteur = etree.SubElement(auteurs,"auteur")
         auteur.text = aut
@@ -223,8 +225,6 @@ def write_xml(text,name):
             print(affil)
             affiliation.text = affil[0]
             affil.pop(0)
-            affiliation.text = "No affiliation"
-        elif len(affil) == 1:
         elif len(affil) == 0:
             affiliation.text = "No affiliation"
         elif len(affil) == 1:
