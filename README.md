@@ -45,6 +45,19 @@ nom de cet article .
 permettant d'identifier des noms propres . On écrit le nom de chaque auteur dans 
 le fichier texte.
 
+Il existe 2 options -x et -t :
+  La première option est pour la conversion en fichier xml
+  La seconde option est pour la conversion en fichier txt
+  Ps : Par défaut la conversion est en texte
+  
+Il faut aussi renseigner le path où résident les pdfs qu'on veux convertir!
+
+
+#Exemple d'utilisation
+
+python main.py [-x|-t| ] [path des pdf]
+
+python main.py -x articles -> conversion en xml des pdfs dans le dossier articles 
 
 ## Nos réunions ♫
 
@@ -63,3 +76,9 @@ le fichier texte.
 ![Screenshot](agenda/discord6.png)
 
 ![Screenshot](agenda/discord7.png)
+
+![Screenshot](agenda/discord8.png)
+
+![Screenshot](agenda/discord9.png)
+
+![Screenshot](agenda/preview.png)
