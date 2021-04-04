@@ -31,7 +31,7 @@ emailPattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 emailMatcher = re.compile(emailPattern)
 discussionPattern = "^.*[D][Ii][Ss][Cc][Uu][Ss][Ss][Ii][Oo][Nn].*$"
 discussionMatcher = re.compile(discussionPattern)
-acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Ee]?[Mm][Ee][Nn][Tt][Ss].*$"
+acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Ee][Mm][Ee][Nn][Tt][Ss].*$"
 acknowlegmentsMatcher = re.compile(acknowlegmentsPattern)
 endIntroductionPattern = "((\s)*(2|II)(\.)?\s[A-Z](\w|\s|,)*$)|(^2(\s)?$)"
 endIntroductionMatcher = re.compile(endIntroductionPattern)
@@ -43,6 +43,7 @@ def find_author(text):
     found = 0
     splitedText = text.splitlines()
     for i in range(0,10):
+
         words = nltk.word_tokenize(splitedText[i])
         for elt in ner_tagger.tag(words):
             if elt[1] == "PERSON":
@@ -134,9 +135,9 @@ def find_conclusion(text):
     for line in splitedText:
         if vf and concMatcher.match(line):
             vf = False
-        if (not vf) and (not referencesMatcher.match(line)):
+        if (not vf) and (not referencesMatcher.match(line) and not acknowlegmentsMatcher.match(line)):
             res = res + line
-        if (not vf) and referencesMatcher.match(line):
+        if (not vf) and ( referencesMatcher.match(line) or acknowlegmentsMatcher.match(line) ):
             break
     if vf:
         res = "No conclusion was found"
@@ -174,6 +175,31 @@ def find_corp(text):
         res = "No corp was found"
     return res;
 
+def find_affiliation(text,author):
+    res=""
+    authors = author.split(", ")
+    affil= []
+    splitedText = text.splitlines()
+    trouve = False
+    for line in splitedText:
+        if not trouve:
+            for author in authors:
+                words = author.split(" ")
+                for word in words:
+                    if word in line.split(" "):
+                        trouve = True
+                        break
+        else:
+            if emailMatcher.match(line):
+                affil.insert(len(affil),res+line)
+                res = ""
+            else:
+                res = res +line
+        if abstractMatcher.match(line):
+            break
+
+    return affil;
+
 def write_xml(text,name):
     author = find_author(text)
     title = find_title(text, author)
@@ -189,8 +215,21 @@ def write_xml(text,name):
     preamble.text = name + ".pdf"
     titre = etree.SubElement(article,"titre")
     titre.text = title
-    auteur = etree.SubElement(article,"auteur")
-    auteur.text = author
+    for aut in author.split(", "):
+        auteur = etree.SubElement(auteurs,"auteur")
+        auteur.text = aut
+        affiliation = etree.SubElement(auteurs,"affiliation")
+        if len(affil) > 1:
+            print(affil)
+            affiliation.text = affil[0]
+            affil.pop(0)
+            affiliation.text = "No affiliation"
+        elif len(affil) == 1:
+        elif len(affil) == 0:
+            affiliation.text = "No affiliation"
+        elif len(affil) == 1:
+            affiliation.text = affil[0]
+
     abstractB = etree.SubElement(article,"abstract")
     abstractB.text = abstract
     introductionB = etree.SubElement(article,"introduction")
