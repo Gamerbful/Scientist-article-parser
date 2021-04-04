@@ -29,10 +29,15 @@ referencesPattern = "References"
 referencesMatcher = re.compile(referencesPattern)
 emailPattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 emailMatcher = re.compile(emailPattern)
+
 discussionPattern = "^.*[D][Ii][Ss][Cc][Uu][Ss][Ss][Ii][Oo][Nn].*$"
 discussionMatcher = re.compile(discussionPattern)
-acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Ee]?[Mm][Ee][Nn][Tt][Ss].*$"
+
+acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Ee][Mm][Ee][Nn][Tt][Ss].*$"
 acknowlegmentsMatcher = re.compile(acknowlegmentsPattern)
+
+conclusionsPattern = "^.*[Cc][Oo][Nn][Cc][Ll][Uu][Ss][Ii][Oo][Nn][Ss].*$"
+conclusionsMatcher = re.compile(conclusionsPattern)
 
 # --- Function for name recognition ---
 def find_author(text):
@@ -41,6 +46,7 @@ def find_author(text):
     found = 0
     splitedText = text.splitlines()
     for i in range(0,10):
+
         words = nltk.word_tokenize(splitedText[i])
         for elt in ner_tagger.tag(words):
             if elt[1] == "PERSON":
@@ -114,7 +120,7 @@ def find_discussion(text):
     splitedText = text.splitlines()
     for line in splitedText:
         if vf:
-            if acknowlegmentsMatcher.match(line) or concMatcher.match(line):
+            if acknowlegmentsMatcher.match(line) or conclusionsMatcher.match(line):
                 break
             else:
                 res = res + line
@@ -132,38 +138,71 @@ def find_conclusion(text):
     for line in splitedText:
         if vf and concMatcher.match(line):
             vf = False
-        if (not vf) and (not referencesMatcher.match(line)):
+        if (not vf) and (not referencesMatcher.match(line) and not acknowlegmentsMatcher.match(line)):
             res = res + line
-        if (not vf) and referencesMatcher.match(line):
+        if (not vf) and ( referencesMatcher.match(line) or acknowlegmentsMatcher.match(line) ):
             break
     if vf:
         res = "No conclusion was found"
     return res;
 
+def find_affiliation(text,author):
+    res=""
+    authors = author.split(", ")
+    affil= []
+    splitedText = text.splitlines()
+    trouve = False
+    for line in splitedText:
+        if not trouve:
+            for author in authors:
+                words = author.split(" ")
+                for word in words:
+                    if word in line.split(" "):
+                        trouve = True
+                        break
+        else:
+            if emailMatcher.match(line):
+                affil.insert(len(affil),res+line)
+                res = ""
+            else:
+                res = res +line
+        if abstractMatcher.match(line):
+            break
+
+    return affil;
 
 def write_xml(text,name):
-    #author = find_author(text)
-    #title = find_title(text, author)
-    #abstract = find_abstract(text)
-    #refs = find_references(text)
-    #conclu = find_conclusion(text)
-    discussion = find_discussion(text)
-
+    author = find_author(text)
+    title = find_title(text, author)
+    abstract = find_abstract(text)
+    refs = find_references(text)
+    conclu = find_conclusion(text)
+    affil = find_affiliation(text,author)
     article = etree.Element("article")
-    # preamble = etree.SubElement(article,"preamble")
-    # preamble.text = name + ".pdf"
-    # titre = etree.SubElement(article,"titre")
-    # titre.text = title
-    # auteur = etree.SubElement(article,"auteur")
-    # auteur.text = author
-    # abstractB = etree.SubElement(article,"abstract")
-    # abstractB.text = abstract
-    discussionB = etree.SubElement(article,"discussion")
-    discussionB.text = discussion
-    # biblio = etree.SubElement(article,"biblio")
-    # biblio.text = refs
-    # conclusion = etree.SubElement(article,"conclusion")
-    # conclusion.text = conclu
+    preamble = etree.SubElement(article,"preamble")
+    preamble.text = name + ".pdf"
+    titre = etree.SubElement(article,"titre")
+    titre.text = title
+    auteurs = etree.SubElement(article,"auteurs")
+    for aut in author.split(", "):
+        auteur = etree.SubElement(auteurs,"auteur")
+        auteur.text = aut
+        affiliation = etree.SubElement(auteurs,"affiliation")
+        if len(affil) > 1:
+            affiliation.text = affil[0]
+            affil.pop(0)
+        if len(affil) == 0:
+            affiliation.text = "No affiliation"
+        if len(affil) == 1:
+            affiliation.text = affil[0]
+
+    abstractB = etree.SubElement(article,"abstract")
+    abstractB.text = abstract
+    biblio = etree.SubElement(article,"biblio")
+    biblio.text = refs
+    conclusion = etree.SubElement(article,"conclusion")
+    conclusion.text = conclu
+
 
     file = open("res/" + name + ".xml","w+", encoding='utf-8')
     file.write((etree.tostring(article,pretty_print=True).decode("utf-8")))
