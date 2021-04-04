@@ -23,6 +23,8 @@ abstractPattern = "^.*[Aa][Bb][Ss][Tt][Rr][Aa][Cc][Tt].*$"
 abstractMatcher = re.compile(abstractPattern)
 introPattern = "^.*[Ii][Nn][Tt][Rr][Oo][Dd][Uu][Cc][Tt][Ii][Oo][Nn].*$"
 introMatcher = re.compile(introPattern)
+concPattern = "^.*[C][Oo][Nn][Cc][Ll][Uu][Ss][Ii][Oo][Nn].*$"
+concMatcher = re.compile(concPattern)
 referencesPattern = "References"
 referencesMatcher = re.compile(referencesPattern)
 emailPattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
@@ -127,12 +129,29 @@ def find_discussion(text):
         res = "No discussion was found"
     return res;
 
+
+def find_conclusion(text):
+    res=""
+    splitedText = text.splitlines()
+    vf = True
+    for line in splitedText:
+        if vf and concMatcher.match(line):
+            vf = False
+        if (not vf) and (not referencesMatcher.match(line)):
+            res = res + line
+        if (not vf) and referencesMatcher.match(line):
+            break
+    if vf:
+        res = "No conclusion was found"
+    return res;
+
+
 def write_xml(text,name):
     author = find_author(text)
     title = find_title(text, author)
     abstract = find_abstract(text)
     refs = find_references(text)
-    discussion = find_discussion(text)
+    conclu = find_conclusion(text)
 
     article = etree.Element("article")
     preamble = etree.SubElement(article,"preamble")
@@ -143,11 +162,11 @@ def write_xml(text,name):
     auteur.text = author
     abstractB = etree.SubElement(article,"abstract")
     abstractB.text = abstract
-    discussionB = etree.SubElement(article,"discussion")
-    discussionB.text = discussion
     biblio = etree.SubElement(article,"biblio")
     biblio.text = refs
-
+    conclusion = etree.SubElement(article,"conclusion")
+    conclusion.text = conclu
+    
     file = open("res/" + name + ".xml","w+", encoding='utf-8')
     file.write((etree.tostring(article,pretty_print=True).decode("utf-8")))
     file.close()
