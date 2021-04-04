@@ -9,6 +9,10 @@ import xml.etree.cElementTree as ET
 
 import os, sys, re
 
+import tkinter as tk
+from tkinter import filedialog
+from tkinter import messagebox
+
 jar = './stanford-ner-2020-11-17/stanford-ner.jar'
 model = './stanford-ner-2020-11-17/classifiers/english.all.3class.distsim.crf.ser.gz'
 
@@ -222,7 +226,6 @@ def write_xml(text,name):
         auteur.text = aut
         affiliation = etree.SubElement(auteurs,"affiliation")
         if len(affil) > 1:
-            print(affil)
             affiliation.text = affil[0]
             affil.pop(0)
         elif len(affil) == 0:
@@ -291,23 +294,34 @@ if __name__ == '__main__':
             print("usage: main.py directory [-x|-t]")
             sys.exit(1)
 
+    #if len(dirl) > 0:
+    if dirname[len(dirname)-1] != '/':
+        dirname += '/'
+    try:
+        os.mkdir("./res")
+    except FileExistsError:
+        pass
+
     dirl = []
+
     try:
         dirl = os.listdir(dirname)
+        root = tk.Tk()
+        root.withdraw()
+        MsgBox = tk.messagebox.askquestion('','Select only specific files ?')
+        if MsgBox == 'yes':
+            dirl = filedialog.askopenfilenames(parent=root,title='Choose files', filetypes=[('PDF file','*.pdf')], initialdir=dirname)
+            dirl = list(dirl)
+            for index, file in enumerate(dirl):
+                f = file.split('/')
+                dirl[index] = f[len(f)-1]
+            root.quit()
+
+        print("Running ...")
     except FileNotFoundError:
         print("Directory does not exist")
     except NotADirectoryError:
         print("Not a directory")
-
-    if len(dirl) > 0:
-        if dirname[len(dirname)-1] != '/':
-            dirname += '/'
-        try:
-            os.mkdir("./res")
-        except FileExistsError:
-            pass
-
-    print("Running ...")
 
     for f in dirl:
         print("Parse of : "+f)
