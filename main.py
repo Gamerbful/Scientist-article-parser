@@ -178,6 +178,7 @@ def write_xml(text,name):
     refs = find_references(text)
     conclu = find_conclusion(text)
     affil = find_affiliation(text,author)
+
     article = etree.Element("article")
     preamble = etree.SubElement(article,"preamble")
     preamble.text = name + ".pdf"
@@ -189,11 +190,12 @@ def write_xml(text,name):
         auteur.text = aut
         affiliation = etree.SubElement(auteurs,"affiliation")
         if len(affil) > 1:
+            print(affil)
             affiliation.text = affil[0]
             affil.pop(0)
-        if len(affil) == 0:
+        elif len(affil) == 0:
             affiliation.text = "No affiliation"
-        if len(affil) == 1:
+        elif len(affil) == 1:
             affiliation.text = affil[0]
 
     abstractB = etree.SubElement(article,"abstract")
