@@ -1,8 +1,3 @@
 <article>
-  <preamble>kesslerMETICS-ICDIM2019.pdf</preamble>
-  <titre>A word embedding approach to explore a collection of discussions of people in psychological distress Universite Bretagne Sud </titre>
-  <auteur>Remy Kessler , Nicolas Bechet</auteur>
-  <abstract>Abstract&#8212;In order to better adapt to society, an associationhas developed a web chat application that allows anyone toexpress and share their concerns and anguishes. Several thousandanonymous conversations have been gathered and form a newcorpus of stories about human distress and social violence. Wepresent a method of corpus analysis combining unsupervisedlearning and word embedding in order to bring out the themesof this particular collection. We compare this approach with astandard algorithm of the literature on a labeled corpus andobtain very good results. An interpretation of the obtainedclusters collection confirms the interest of the method.Keywords&#8212;word2vec, unsupervised learning, word embedding.</abstract>
   <discussion>No discussion was found</discussion>
-  <biblio>No references was found</biblio>
 </article>

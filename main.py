@@ -29,15 +29,10 @@ referencesPattern = "References"
 referencesMatcher = re.compile(referencesPattern)
 emailPattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 emailMatcher = re.compile(emailPattern)
-
 discussionPattern = "^.*[D][Ii][Ss][Cc][Uu][Ss][Ss][Ii][Oo][Nn].*$"
 discussionMatcher = re.compile(discussionPattern)
-
-acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Mm][Ee][Nn][Tt][Ss].*$"
+acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Ee]?[Mm][Ee][Nn][Tt][Ss].*$"
 acknowlegmentsMatcher = re.compile(acknowlegmentsPattern)
-
-conclusionsPattern = "^.*[Cc][Oo][Nn][Cc][Ll][Uu][Ss][Ii][Oo][Nn][Ss].*$"
-conclusionsMatcher = re.compile(conclusionsPattern)
 
 # --- Function for name recognition ---
 def find_author(text):
@@ -119,7 +114,7 @@ def find_discussion(text):
     splitedText = text.splitlines()
     for line in splitedText:
         if vf:
-            if acknowlegmentsMatcher.match(line) or conclusionsMatcher.match(line):
+            if acknowlegmentsMatcher.match(line) or concMatcher.match(line):
                 break
             else:
                 res = res + line
@@ -147,26 +142,29 @@ def find_conclusion(text):
 
 
 def write_xml(text,name):
-    author = find_author(text)
-    title = find_title(text, author)
-    abstract = find_abstract(text)
-    refs = find_references(text)
-    conclu = find_conclusion(text)
+    #author = find_author(text)
+    #title = find_title(text, author)
+    #abstract = find_abstract(text)
+    #refs = find_references(text)
+    #conclu = find_conclusion(text)
+    discussion = find_discussion(text)
 
     article = etree.Element("article")
-    preamble = etree.SubElement(article,"preamble")
-    preamble.text = name + ".pdf"
-    titre = etree.SubElement(article,"titre")
-    titre.text = title
-    auteur = etree.SubElement(article,"auteur")
-    auteur.text = author
-    abstractB = etree.SubElement(article,"abstract")
-    abstractB.text = abstract
-    biblio = etree.SubElement(article,"biblio")
-    biblio.text = refs
-    conclusion = etree.SubElement(article,"conclusion")
-    conclusion.text = conclu
-    
+    # preamble = etree.SubElement(article,"preamble")
+    # preamble.text = name + ".pdf"
+    # titre = etree.SubElement(article,"titre")
+    # titre.text = title
+    # auteur = etree.SubElement(article,"auteur")
+    # auteur.text = author
+    # abstractB = etree.SubElement(article,"abstract")
+    # abstractB.text = abstract
+    discussionB = etree.SubElement(article,"discussion")
+    discussionB.text = discussion
+    # biblio = etree.SubElement(article,"biblio")
+    # biblio.text = refs
+    # conclusion = etree.SubElement(article,"conclusion")
+    # conclusion.text = conclu
+
     file = open("res/" + name + ".xml","w+", encoding='utf-8')
     file.write((etree.tostring(article,pretty_print=True).decode("utf-8")))
     file.close()
