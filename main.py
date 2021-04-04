@@ -33,6 +33,8 @@ discussionPattern = "^.*[D][Ii][Ss][Cc][Uu][Ss][Ss][Ii][Oo][Nn].*$"
 discussionMatcher = re.compile(discussionPattern)
 acknowlegmentsPattern = "^.*[Aa][Cc][Kk][Nn][Oo][Ww][Ll][Ee][Dd][Gg][Ee]?[Mm][Ee][Nn][Tt][Ss].*$"
 acknowlegmentsMatcher = re.compile(acknowlegmentsPattern)
+endIntroductionPattern = "((\s)*(2|II)(\.)?\s[A-Z](\w|\s|,)*$)|(^2(\s)?$)"
+endIntroductionMatcher = re.compile(endIntroductionPattern)
 
 # --- Function for name recognition ---
 def find_author(text):
@@ -140,30 +142,67 @@ def find_conclusion(text):
         res = "No conclusion was found"
     return res;
 
+def find_introduction(text):
+    res = ""
+    splitedText = text.splitlines()
+    vf = False
+    for line in splitedText:
+        if vf:
+            if endIntroductionMatcher.match(line):
+                break
+            else:
+                res = res + line
+        if not vf and introMatcher.match(line):
+            vf = True
+    if not vf:
+        res = "No introduction was found"
+    return res;
+
+def find_corp(text):
+    res = ""
+    splitedText = text.splitlines()
+    vf = False
+    for line in splitedText:
+        if vf:
+            if concMatcher.match(line) or discussionMatcher.match(line):
+                break
+            else:
+                res = res + line
+        if not vf and endIntroductionMatcher.match(line):
+            vf = True
+    if not vf:
+        res = "No corp was found"
+    return res;
 
 def write_xml(text,name):
-    #author = find_author(text)
-    #title = find_title(text, author)
-    #abstract = find_abstract(text)
-    #refs = find_references(text)
-    #conclu = find_conclusion(text)
+    author = find_author(text)
+    title = find_title(text, author)
+    abstract = find_abstract(text)
+    refs = find_references(text)
+    conclu = find_conclusion(text)
     discussion = find_discussion(text)
+    introduction = find_introduction(text)
+    corp = find_corp(text)
 
     article = etree.Element("article")
-    # preamble = etree.SubElement(article,"preamble")
-    # preamble.text = name + ".pdf"
-    # titre = etree.SubElement(article,"titre")
-    # titre.text = title
-    # auteur = etree.SubElement(article,"auteur")
-    # auteur.text = author
-    # abstractB = etree.SubElement(article,"abstract")
-    # abstractB.text = abstract
+    preamble = etree.SubElement(article,"preamble")
+    preamble.text = name + ".pdf"
+    titre = etree.SubElement(article,"titre")
+    titre.text = title
+    auteur = etree.SubElement(article,"auteur")
+    auteur.text = author
+    abstractB = etree.SubElement(article,"abstract")
+    abstractB.text = abstract
+    introductionB = etree.SubElement(article,"introduction")
+    introductionB.text = introduction
+    corpB = etree.SubElement(article,"corp")
+    corpB.text = corp
     discussionB = etree.SubElement(article,"discussion")
     discussionB.text = discussion
-    # biblio = etree.SubElement(article,"biblio")
-    # biblio.text = refs
-    # conclusion = etree.SubElement(article,"conclusion")
-    # conclusion.text = conclu
+    biblio = etree.SubElement(article,"biblio")
+    biblio.text = refs
+    conclusion = etree.SubElement(article,"conclusion")
+    conclusion.text = conclu
 
     file = open("res/" + name + ".xml","w+", encoding='utf-8')
     file.write((etree.tostring(article,pretty_print=True).decode("utf-8")))
@@ -175,14 +214,20 @@ def write_text(text,name):
     abstract = find_abstract(text)
     references = find_references(text)
     discussion = find_discussion(text)
+    introduction = find_introduction(text)
+    corp = find_corp(text)
+    conclu = find_conclusion(text)
 
     file = open("res/" + name + ".txt","w+", encoding='utf-8')
     file.write("Nom du fichier: " + f + "\n\n")
     file.write("Titre: " + title + "\n\n")
     file.write("Auteurs: " + author + "\n\n")
     file.write(abstract.replace("Abstract","Abstract : ") + "\n\n")
-    file.write(references.replace("References","References : ") + "\n\n")
+    file.write("Introduction : "+introduction+"\n\n")
+    file.write("Corp : "+corp+"\n\n")
     file.write("Discussion : "+discussion+"\n\n")
+    file.write("Conclusion : "+conclu+"\n\n")
+    file.write(references.replace("References","References : ") + "\n\n")
     file.close()
 
 if __name__ == '__main__':
