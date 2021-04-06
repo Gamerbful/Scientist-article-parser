@@ -8,9 +8,7 @@
     <affiliation>andrea.linhares@ufc.br</affiliation>
     <auteur>Stephane Huet1 </auteur>
     <affiliation>andrea.linhares@ufc.br</affiliation>
-    <auteur>Andrea Carneiro Linhares3 </auteur>
-    <affiliation>andrea.linhares@ufc.br</affiliation>
-    <auteur>Brasil</auteur>
+    <auteur>Andrea Carneiro Linhares3</auteur>
     <affiliation>andrea.linhares@ufc.br</affiliation>
   </auteurs>
   <abstract>AbstractMulti-sentence compression aims to generate a short and informative compression from several source sentences that deal with the sametopic. In this work, we present a new corpus for the Multi-Sentence Compression (MSC) task in Portuguese and Spanish. We alsoprovide on this corpus a comparison of two state-of-the-art MSC systems.Keywords: Annotated Corpus, Multi-Sentence Compression, Multilingual Corpus.1.</abstract>

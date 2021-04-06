@@ -6,9 +6,7 @@
     <affiliation>me@duyet.net</affiliation>
     <auteur>Vo Minh Quan </auteur>
     <affiliation>Vo Minh Quan95.vominhquan@gmail.com</affiliation>
-    <auteur>Dang Quang An </auteur>
-    <affiliation>Dang Quang Anan.dang1390@gmail.com</affiliation>
-    <auteur>Mikolov</auteur>
+    <auteur>Dang Quang An</auteur>
     <affiliation>Dang Quang Anan.dang1390@gmail.com</affiliation>
   </auteurs>
   <abstract>Abstract&#8212; Unsupervise learned word embeddings have seentremendous success in numerous Natural Language Processing(NLP) tasks in recent years. The main contribution of thispaper is to develop a technique called Skill2vec, which appliesmachine learning techniques in recruitment to enhance thesearch strategy to find candidates possessing the appropriateskills. Skill2vec is a neural network architecture inspired byWord2vec, developed by Mikolov et al. in 2013. It transformsskills to new vector space, which has the characteristics ofcalculation and presents skills relationships. We conducted anexperiment evaluation manually by a recruitment company&#8217;sdomain experts to demonstrate the effectiveness of our ap-proach.</abstract>
