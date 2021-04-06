@@ -45,10 +45,8 @@ def find_author(text):
     res = ""
     name = ""
     found = 0
-    i = 0
-    max = 10
     splitedText = text.splitlines()
-    while i<max:
+    for i in range(0,10):
 
         words = nltk.word_tokenize(splitedText[i])
         for elt in ner_tagger.tag(words):
@@ -56,7 +54,7 @@ def find_author(text):
                 name += elt[0] + " "
                 found += 1
             else:
-                if name != "" and found > 1:
+                if name != "":
                     res += name + ", "
                     name = ""
                     found = 0
@@ -64,9 +62,7 @@ def find_author(text):
             if found > 1:
                 res += name + ", "
                 name = ""
-                max = max + 5
         found = 0
-        i = i +1
     return res[0:len(res)-3]
 
 def find_title(text,author):
