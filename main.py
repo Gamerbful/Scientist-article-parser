@@ -64,7 +64,7 @@ def find_author(text):
             if found > 1:
                 res += name + ", "
                 name = ""
-                max = max + 5
+                max = max + 2
         found = 0
         i = i +1
     return res[0:len(res)-3]
@@ -210,6 +210,7 @@ def find_affiliation(text,author):
     res=""
     authors = author.split(", ")
     affil= []
+    emails = []
     splitedText = text.splitlines()
     trouve = False
     for line in splitedText:
@@ -222,21 +223,24 @@ def find_affiliation(text,author):
                         break
         else:
             if emailMatcher.match(line):
-                affil.insert(len(affil),res+line)
+                affil.insert(len(affil),res)
+                emails.insert(len(emails),line)
                 res = ""
             else:
                 res = res +line
         if abstractMatcher.match(line):
             break
 
-    return affil;
+    return (affil,emails);
 
 def write_xml(text,name):
     ACTUAL_LINE = 0
 
     author = find_author(text)
     title = find_title(text, author)
-    affil = find_affiliation(text,author)
+    affilia = find_affiliation(text,author)
+    affil = affilia[0]
+    emails = affilia[1]
 
     author = find_author(text)
     title = find_title(text, author)
@@ -266,6 +270,12 @@ def write_xml(text,name):
     for aut in author.split(", "):
         auteur = etree.SubElement(auteurs,"auteur")
         auteur.text = aut
+        if len(emails) > 1:
+            auteur.text = auteur.text + " " + emails[0]
+            emails.pop(0)
+        if len(emails) == 1:
+            auteur.text = auteur.text + " " + emails[0]
+
         affiliation = etree.SubElement(auteurs,"affiliation")
         if len(affil) > 1:
             affiliation.text = affil[0]

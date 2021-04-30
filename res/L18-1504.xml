@@ -2,14 +2,14 @@
   <preamble>L18-1504.pdf</preamble>
   <titre>A New Annotated Portuguese/Spanish Corpus for the Multi-Sentence Compression Task </titre>
   <auteurs>
-    <auteur>Elvys Linhares </auteur>
-    <affiliation>Andrea Carneiro Linhares31CERI/LIA, Universite d&#8217;Avignon et des Pays de Vaucluse, Avignon, France2 &#180;Ecole Polytechnique de Montreal, Montreal, Canada3Universidade Federal do Cear&#180;a, Sobral-CE, Brasil{elvys.linhares-pontes, juan-manuel.torres, stephane.huet}@univ-avignon.fr</affiliation>
-    <auteur>Juan-Manuel Torres-Moreno1,2 </auteur>
-    <affiliation>andrea.linhares@ufc.br</affiliation>
-    <auteur>Stephane Huet1 </auteur>
-    <affiliation>andrea.linhares@ufc.br</affiliation>
-    <auteur>Andrea Carneiro Linhares3</auteur>
-    <affiliation>andrea.linhares@ufc.br</affiliation>
+    <auteur>Elvys Linhares  {elvys.linhares-pontes, juan-manuel.torres, stephane.huet}@univ-avignon.fr andrea.linhares@ufc.br</auteur>
+    <affiliation>Andrea Carneiro Linhares31CERI/LIA, Universite d&#8217;Avignon et des Pays de Vaucluse, Avignon, France2 &#180;Ecole Polytechnique de Montreal, Montreal, Canada3Universidade Federal do Cear&#180;a, Sobral-CE, Brasil</affiliation>
+    <auteur>Juan-Manuel Torres-Moreno1,2  andrea.linhares@ufc.br</auteur>
+    <affiliation></affiliation>
+    <auteur>Stephane Huet1  andrea.linhares@ufc.br</auteur>
+    <affiliation></affiliation>
+    <auteur>Andrea Carneiro Linhares3 andrea.linhares@ufc.br</auteur>
+    <affiliation></affiliation>
   </auteurs>
   <abstract>AbstractMulti-sentence compression aims to generate a short and informative compression from several source sentences that deal with the sametopic. In this work, we present a new corpus for the Multi-Sentence Compression (MSC) task in Portuguese and Spanish. We alsoprovide on this corpus a comparison of two state-of-the-art MSC systems.Keywords: Annotated Corpus, Multi-Sentence Compression, Multilingual Corpus.1.</abstract>
   <introduction>Among the various applications of Natural Language Pro-cessing, Automatic Text Summarization (ATS) aims atsummarizing one or more texts automatically. Summariza-tion systems identify relevant data and create a summaryfrom key information. The (Multi-)Sentence Compressiontask can be seen as a subproblem of ATS with the objectiveto generate a shorter, informative and correct sentence fromsource sentence(s).In many cases, state-of-the-art NLP systems are evaluatedwith experiments restrained to the English language, in partbecause there are a lot of available English resources formost NLP tasks. As regards Multi-Sentence Compression(MSC), the available resources are unfortunately limited; toour knowledge, only one dataset is freely available and it isconfined to the French language (Boudin and Morin, 2013).In this work, we present a new annotated corpus in the Por-tuguese and Spanish languages for the MSC task. Usingthis corpus, we evaluate two state-of-the-art systems andshow that the use of several languages leads to more miti-gated results on the superiority of one system than the useof the French corpus alone.The remainder of this paper is organized as follows. In Sec-tion 2, we characterize MSC with respect to related tasksfrom the perspective of the available corpora. Section 3describes the creation and the features of our corpus. InSection 4 we analyze the results achieved by state-of-the-art methods using our dataset. Finally, conclusions are setout in Section 5.</introduction>

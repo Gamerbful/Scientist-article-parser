@@ -2,16 +2,14 @@
   <preamble>acl2012.pdf</preamble>
   <titre>Finding Salient Dates for Building Thematic Timelines </titre>
   <auteurs>
-    <auteur>Remy Kessler </auteur>
-    <affiliation>LIMSI-CNRSOrsay, Francekessler@limsi.fr</affiliation>
-    <auteur>Xavier Tannier </auteur>
-    <affiliation>Xavier TannierUniv. Paris-Sud,LIMSI-CNRSOrsay, Francextannier@limsi.fr</affiliation>
-    <auteur>Caroline Hagege </auteur>
-    <affiliation>Caroline HagegeXerox Research Center EuropeMeylan, Francehagege@xrce.xerox.com</affiliation>
-    <auteur>Meylan Veronique Moriceau </auteur>
-    <affiliation>Veronique MoriceauUniv. Paris-Sud, LIMSI-CNRSOrsay, Francemoriceau@limsi.fr</affiliation>
-    <auteur>Andre Bittar</auteur>
-    <affiliation>Andre BittarXerox Research Center EuropeMeylan, Francebittar@xrce.xerox.com</affiliation>
+    <auteur>Remy Kessler  kessler@limsi.fr</auteur>
+    <affiliation>LIMSI-CNRSOrsay, France</affiliation>
+    <auteur>Xavier Tannier  xtannier@limsi.fr</auteur>
+    <affiliation>Xavier TannierUniv. Paris-Sud,LIMSI-CNRSOrsay, France</affiliation>
+    <auteur>Caroline Hagege  hagege@xrce.xerox.com</auteur>
+    <affiliation>Caroline HagegeXerox Research Center EuropeMeylan, France</affiliation>
+    <auteur>Meylan Veronique Moriceau moriceau@limsi.fr bittar@xrce.xerox.com</auteur>
+    <affiliation>Veronique MoriceauUniv. Paris-Sud, LIMSI-CNRSOrsay, France</affiliation>
   </auteurs>
   <abstract>AbstractWe present an approach for detecting salient(important) dates in texts in order to auto-matically build event timelines from a searchquery (e.g. the name of an event or person,etc.). This work was carried out on a corpusof newswire texts in English provided by theAgence France Presse (AFP). In order to ex-tract salient dates that warrant inclusion in anevent timeline, we first recognize and normal-ize temporal expressions in texts and then usea machine-learning approach to extract salientdates that relate to a particular topic. We fo-cused only on extracting the dates and not theevents to which they are related.1</abstract>
   <introduction>Our aim here was to build thematic timelines fora general domain topic defined by a user query.This task, which involves the extraction of importantevents, is related to the tasks of Retrospective EventDetection (Yang et al., 1998), or New Event Detec-tion, as defined for example in Topic Detection andTracking (TDT) campaigns (Allan, 2002).The majority of systems designed to tackle thistask make use of textual information in a bag-of-words manner.They use little temporal informa-tion, generally only using document metadata, suchas the document creation time (DCT). The few sys-tems that do make use of temporal information (suchas the now discontinued Google timeline), only ex-tract absolute, full dates (that feature a day, monthand year). In our corpus, described in Section 3.1,we found that only 7% of extracted temporal expres-sions are absolute dates.We distinguish our work from that of previous re-searchers in that we have focused primarily on ex-tracted temporal information as opposed to othertextual content. We show that using linguistic tem-poral processing helps extract important events intexts. Our system extracts a maximum of temporalinformation and uses only this information to detectsalient dates for the construction of event timelines.Other types of content are used for initial thematicdocument retrieval. Output is a list of dates, rankedfrom most important to least important with respectto the given topic. Each date is presented with a setof relevant sentences.We can see this work as a new, easily evaluabletask of &#8220;date extraction&#8221;, which is an important com-ponent of timeline summarization.In what follows, we first review some of the re-lated work in Section 2. Section 3 presents the re-sources used and gives an overview of the system.The system used for temporal analysis is describedin Section 4, and the strategy used for indexing andfinding salient dates, as well as the results obtained,are given in Section 51.</introduction>
