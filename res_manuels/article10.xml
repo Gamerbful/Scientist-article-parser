@@ -1,0 +1,29 @@
+<article>
+    <preamble>surveyTermExtraction.pdf</preamble>
+    <titre>Automatic Term Detection : A review of current systems</titre>
+    <auteur>M. Teresa Cabré Castellvi, teresa.cabre@trad.upf.es </auteur>
+    <affiliation>Institut Universitari de Lingüística Aplicada Universitat Pompeu Fabra, La Rambla, 30-32 Barcelona – Spain - 08002 </affiliation>
+    <auteur>Rosa Estopà Bagot, rosa.estopa@trad.upf.es </auteur>
+    <affiliation>Institut Universitari de Lingüística Aplicada Universitat Pompeu Fabra, La Rambla, 30-32 Barcelona – Spain - 08002 </affiliation>
+    <auteur>Jordi Vivaldi Palatresi, jorge.vivaldi@info.upf.es </auteur>
+    <affiliation>Institut Universitari de Lingüística Aplicada Universitat Pompeu Fabra, La Rambla, 30-32 Barcelona – Spain - 08002 </affiliation>
+    <abstract>
+        In this paper we account for the main characteristics and performance of a
+        number of recently developed term extraction systems...
+    </abstract>
+    <introduction>
+        In the late 80s there was an acute need, from different disciplines and goals, to
+        automatically extract terminological units from specialised texts. In the 90s large ...
+    </introduction>
+    <corps>
+        In the following sections we offer a critical description of number of ...
+    </corps>
+    <conclusion>
+        We can reach some conclusions after having analysed and evaluated some of the
+        main systems of TE designed in the last decade ...
+    </conclusion>
+    <biblio>
+        Arppe, A. 1995. “Term extraction from unrestricted text”. Lingsoft Web Site:
+        http://www.lingsoft.com ... 
+    </biblio>
+</article>

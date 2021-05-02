@@ -1,0 +1,22 @@
+<article>
+    <preamble>Guy.pdf</preamble>
+    <titre>Skill2vec: Machine Learning Approach for Determining the Relevant Skills from Job Description</titre>
+    <auteur>Le Van-Duyet, me@duyet.net</auteur>
+    <auteur>Vo Minh Quan, 95.vominhquan@gmail.com</auteur>
+    <auteur>Dang Quang An, an.dang1390@gmail.com</auteur>
+    <abstract>
+       Unsupervise learned word embeddings have seen tremendous success in numerous Natural Language Processing (NLP) tasks in recent years...
+    </abstract>
+    <introduction>
+        Recruiters in information technology domain have met the problem finding appropriate candidates by their skills. In the resume, the candidate ...
+    <introduction>
+    <corps>
+       To find relatedness of skills, Simon Hughes [4] from Dice proposed an approach using ...
+    </corps>
+    <conclusion>
+        In this paper, we developed a relationship network between skills in recruitment domain by using the neural net inspired ...
+    </conclusion>
+    <biblio>
+        Michael W Berry and Ricardo D Fierro. “Low-rank orthogonal decompositions for information retrieval applications”. In: Numerical linear algebra with applications 3.4 (1996), pp. 301–327.
+    </biblio>
+</article>

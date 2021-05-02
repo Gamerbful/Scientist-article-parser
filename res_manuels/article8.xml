@@ -1,0 +1,32 @@
+<article>
+    <preamble>L18-1504.pdf</preamble>
+    <titre>A New Annotated Portuguese/Spanish Corpus for the Multi-Sentence Compression Task</titre>
+    <auteur>Elvys Linhares Pontes, elvys.linhares-pontes@univ-avignon.fr</auteur>
+    <affiliation>CERI/LIA, Université d’Avignon et des Pays de Vaucluse, Avignon, France</affiliation>
+    <auteur>Juan-Manuel Torres-Moreno, juan-manuel.torres@univ-avignon.fr</auteur>
+    <affiliation>CERI/LIA, Université d’Avignon et des Pays de Vaucluse, Avignon, France , École Polytechnique de Montréal, Montréal, Canada</affiliation>
+    <auteur>Stéphane Huet, stephane.huet@univ-avignon.fr</auteur>
+    <affiliation>CERI/LIA, Université d’Avignon et des Pays de Vaucluse, Avignon, France</affiliation>
+    <auteur>Andréa Carneiro Linhares, andrea.linhares@ufc.br</auteur>
+    <affiliation>Universidade Federal do Ceará, Sobral-CE, Brasil</affiliation>
+    <abstract>
+        Multi-sentence compression aims to generate a short and informative compression from several source sentences that deal with the same
+        topic ...
+    </abstract>
+    <introduction>
+        Among the various applications of Natural Language Pro-cessing, Automatic Text Summarization (ATS) aims at
+        summarizing one or more texts automatically ...
+    </introduction>
+    <corps>
+        Sentence Compression (SC) aims at producing a reduced grammatically correct sentence from a source sentence. SC
+        can be used in the context of the abstractive summarization of documents ...
+    </corps>
+    <conclusion>
+        Multi-Sentence Compression aims to generate a short informative text summary from several sentences with related
+        and redundant information ...
+    </conclusion>
+    <biblio>
+        Barzilay, R. and McKeown, K. R. (2005). Sentence fusion for multidocument news summarization. Computational
+        Linguistics, 31(3):297–328, September... 
+    </biblio>
+</article>

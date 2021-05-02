@@ -1,0 +1,29 @@
+<article>
+    <preamble>acl2012.pdf</preamble>
+    <titre>Finding Salient Dates for Building Thematic Timelines</titre>
+    <auteur>Remy Kessler, kessler@limsi.fr</auteur>
+    <affiliation>LIMSI-CNRS Orsay, France</affiliation>
+    <auteur>Xavier Tannier, xtannier@limsi.fr</auteur>
+    <affiliation>Univ. Paris-Sud, LIMSI-CNRS Orsay, France</affiliation>
+    <auteur>Caroline Hagege , hagege@xrce.xerox.com</auteur>
+    <affiliation>Xerox Research Center Europe Meylan, France</affiliation>
+    <auteur>Veronique Moriceau, moriceau@limsi.fr</auteur>
+    <affiliation>Univ. Paris-Sud, LIMSI-CNRS Orsay, France</affiliation>
+    <auteur>Andre Bittar, bittar@xrce.xerox.com</auteur>
+    <affiliation>Xerox Research Center Europe Meylan, France</affiliation>
+    <abstract>
+       We present an approach for detecting salient (important) dates in texts in order to automatically ...
+    </abstract>
+    <introduction>
+        Our aim here was to build thematic timelines for a general domain topic defined...
+    <introduction>
+    <corps>
+       The ISO-TimeML language (Pustejovsky et al., 2010) is a specification language for manual annotation of temporal information in texts
+    </corps>
+    <conclusion>
+        This article presents a task of “date extraction” and shows the importance of taking temporal information into consideration ...
+    </conclusion>
+    <biblio>
+        Salah A¨ıt-Mokhtar, Jean-Pierre Chanod, and Claude Roux. 2002. Robustness beyond Shallowness: Incremental Deep Parsing. Natural Language Engineering, 8:121–144 ...
+    </biblio>
+</article>

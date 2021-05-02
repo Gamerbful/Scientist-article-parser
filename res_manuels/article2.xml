@@ -1,0 +1,27 @@
+<article>
+    <preamble>b0e5c43edf116ce2909ae009cc27a1546f09.pdf</preamble>
+    <titre>Inclusive yet Selective: Supervised Distributional Hypernymy Detection</titre>
+    <auteur>Stephen Roller, roller@cs.utexas.edu</auteur>
+    <affiliation> Department of Computer Science</affiliation>
+    <auteur>Katrin Erk, katrin.erk@mail.utexas.edu</auteur>
+    <affiliation>Department of Linguistics The University of Texas at Austin</affiliation>
+    <auteur>Gemma Boleda, gemma.boleda@upf.edu</auteur>
+    <affiliation>Department of Linguistics The University of Texas at Austin</affiliation>
+    <abstract>
+       We test the Distributional Inclusion Hypothesis, which states that hypernyms tend to occur in a superset of contexts in which their hyponyms are found ...
+    </abstract>
+    <introduction>
+        One of the main criticisms of distributional models has been that they fail to distinguish between semantic relations: Typical nearest neighbors of dog ...
+    <introduction>
+    <corps>
+       Distributional models. Distributional models represent a word through the contexts in which it has ...
+    </corps>
+    <conclusion>
+        In this paper, we have tested the Distributional Inclusion Hypothesis, the basis for distributional approaches to hypernymy ...
+    </conclusion>
+    <biblio>
+        Marco Baroni and Alessandro Lenci. 2011. How we BLESSed distributional semantic evaluation. In Proceedings
+        of the GEMS 2011 Workshop on GEometrical Models of Natural Language Semantics, pages 1–10, Edinburgh,
+        UK, July. Association for Computational Linguistics.
+    </biblio>
+</article>

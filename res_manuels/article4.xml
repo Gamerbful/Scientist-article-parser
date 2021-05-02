@@ -1,0 +1,30 @@
+<article>
+    <preamble>C14-1212.pdf</preamble>
+    <titre>Learning to Distinguish Hypernyms and Co-Hyponyms</titre>
+    <auteur>Julie Weeds, juliewe@sussex.ac.uk</auteur>
+    <affiliation>Department of Informatics,University of Sussex,Brighton, UK</affiliation>
+    <auteur>Daoud Clarke, D.Clarke@sussex.ac.uk</auteur>
+    <affiliation>Department of Informatics,University of Sussex,Brighton, UK</affiliation>
+    <auteur> Jeremy Reffin, J.P.Reffin@sussex.ac.uk</auteur>
+    <affiliation>Department of Informatics,University of Sussex,Brighton, UK</affiliation>
+    <auteur> David Weir, davidw@sussex.ac.uk</auteur>
+    <affiliation>Department of Informatics,University of Sussex,Brighton, UK</affiliation>
+    <auteur> Bill Keller, billk@sussex.ac.uk</auteur>
+    <affiliation>Department of Informatics,University of Sussex,Brighton, UK</affiliation>
+    <abstract>
+       This work is concerned with distinguishing different semantic relations which exist between distributionally similar words ...
+    </abstract>
+    <introduction>
+        Over recent years there has been much interest in the field of distributional semantics, drawing on the distributional hypothesis: words that occur in similar contexts tend to have similar meanings (Harris,1954) ...
+    <introduction>
+    <corps>
+       Lee (1999) noted that the substitutability of one word for another was asymmetric and proposed the alpha-skew divergence measure, an asymmetric ...
+    </corps>
+    <conclusion>
+        We have shown that it is possible to predict to a large extent whether or not there is a specific semantic relation between two words given their distributional vectors ...
+    </conclusion>
+    <biblio>
+        Marco Baroni and Alessandro Lenci. 2011. How we BLESSed distributional semantic evaluation. In Proceedings
+        of the GEMS 2011 workshop on Geometric Models of Natural Language Semantics, EMNLP 2011 ...
+    </biblio>
+</article>

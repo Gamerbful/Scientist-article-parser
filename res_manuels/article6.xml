@@ -1,0 +1,26 @@
+<article>
+    <preamble>infoEmbeddings.pdf</preamble>
+    <titre>An Empirical Evaluation of Text Representation Schemes on Multilingual Social Web to Filter the Textual Aggression</titre>
+    <auteur>Sandip Modha, sjmodha@gmail.com</auteur>
+    <affiliation>DA-IICT Gandhinagar,India</affiliation>
+    <auteur>Prasenjit Majumder, prasenjit.majumder@gmail.com</auteur>
+    <affiliation>DA-IICT Gandhinagar,India</affiliation>
+    <abstract>
+       Due to an exponential rise in the social media user base, incidents like hate speech ...
+    </abstract>
+    <introduction>
+        The Social Web is a great source for studying human interaction and behavior. In
+        the last few years, there is an exponential growth in Social Media user base ...
+    <introduction>
+    <corps>
+       Bag-of-Words (BoW) (Harris et al. , 1954) is the oldest technique to represent the
+       text of the documents in fixed-length vectors with high dimensionality. Mikolov ...
+    </corps>
+    <conclusion>
+        In this Paper, Multilingual Social media stream is studied with special kind of text features ...
+    </conclusion>
+    <biblio>
+        Aroyehun, Segun Taofeek and Gelbukh, Alexander (2018). Aggression detection in social media: Using deep neural networks, data augmentation, and pseudolabeling.Proceedings of the First
+        Workshop on Trolling, Aggression and Cyberbullying (TRAC-2018), pp.90–97 ...
+    </biblio>
+</article>

@@ -1,0 +1,23 @@
+<article>
+    <preamble>BLESS.pdf</preamble>
+    <titre>How we BLESSed distributional semantic evaluation</titre>
+    <auteur>Marco Baroni, marco.baroni@unitn.it</auteur>
+    <affiliation>University of Trento Trento, Italy</affiliation>
+    <auteur>Alessandro Lenci, alessandro.lenci@ling.unipi.it</auteur>
+    <affiliation>University of Pisa Pisa, Italy</affiliation>
+    <abstract>
+      We introduce BLESS, a data set specifically designed for the evaluation of distributional semantic models. BLESS contains a set of tuples instantiating ...
+    </abstract>
+    <introduction>
+        In NLP, it is customary to distinguish between intrinsic evaluations, testing a system in itself, and extrinsic evaluations, measuring its performance in ...
+    <introduction>
+    <corps>
+       There are several benchmarks that have been widely adopted for the evaluation ...
+    </corps>
+    <conclusion>
+        We introduced BLESS, the first data set specifically designed for the intrinsic evaluation of DSMs ...
+    </conclusion>
+    <biblio>
+        Herv Abdi and Lynne Williams. 2010. Newman-Keuls and Tukey test. In N.J. Salkind, D.M. Dougherty, and B. Frey, editors, Encyclopedia of Research Design. Sage, Thousand Oaks, CA
+    </biblio>
+</article>

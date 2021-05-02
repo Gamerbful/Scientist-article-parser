@@ -1,0 +1,24 @@
+<article>
+    <preamble>IPM1481.pdf</preamble>
+    <titre>A hybrid approach to managing job offers and candidates</titre>
+    <auteur>Rémy Kessler, remy.kessler@univ-avignon.fr</auteur>
+    <affiliation>LIA/Université d’Avignon et des Pays de Vaucluse, 339 chemin des Meinajariès, 84911 Avignon, France</affiliation>
+    <auteur>Nicolas Béchet, nicolas.bechet@inria.f</auteur>
+    <affiliation>INRIA Domaine de Voluceau, BP 105, 78153 Le Chesnay Cedex, France</affiliation>
+    <abstract>
+        The evolution of the job market has resulted in traditional methods of recruitment becoming insufficient..
+    </abstract>
+    <introduction>
+        The evolution of the job market has resulted in that traditional methods of recruitment becoming insufficient ...
+    <introduction>
+    <corps>
+        Many approaches have been proposed in the literature to reduce the costly and tedious task of managing human resources ...
+    </corps>
+    <conclusion>
+        Job offer processing is a difficult and highly subjective task. The retrieval of relevant information concerning job descriptions and skills is not a trivial task ...
+    </conclusion>
+    <biblio>
+        Audras, I., & Ganascia, J.-G. (2006). Apprentissage du frantais langue TtrangFre et TALN: Analyses de corpus Tcrits a l’aide d’outils d’extraction automatique
+        du langage. In J.-M. Viprey (Ed.), 8Fmes JournTes d’Analyse de DonnTes Textuelles (pp. 67–78). Univ. de Franche ComtT, Besanton 2006... 
+    </biblio>
+</article>
